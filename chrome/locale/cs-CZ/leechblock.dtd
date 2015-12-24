@@ -1,0 +1,157 @@
+<!ENTITY	leechblock					"LeechBlock">
+<!ENTITY	blockSet					"Sada stránek">
+
+<!-- Menu options -->
+<!ENTITY	menu.lockdown				"Uzamknout…">
+<!ENTITY	menu.options				"Možnosti…">
+<!ENTITY	menu.stats					"Statistiky…">
+<!ENTITY	menu.addThisSiteLabel		"Přidat $S do $B">
+
+<!-- Toolbar widgets -->
+<!ENTITY	toolbar.timeLeft			"LeechBlock Zbývající čas">
+<!ENTITY	tooltip.timeLeft			"Zobrazí čas zbývající do zablokování stránky">
+
+<!-- Warning dialog -->
+<!ENTITY	warning.title				"LeechBlock Upozornění">
+<!ENTITY	warning.alertBlock			"Stránky v $B budou zablokovány za $S sekund.">
+
+<!-- Options dialog -->
+<!ENTITY	options.passwordPrompt		"Vložte heslo pro přístup do možností:">
+<!ENTITY	options.accessCodePrompt	"Vložte následující kód pro přístup do možností:">
+<!ENTITY	options.title				"LeechBlock Možnosti">
+<!ENTITY	options.accessTabLabel		"Kontrola přístupu">
+<!ENTITY	options.generalTabLabel		"Obecné">
+<!ENTITY	options.whatBlockTabLabel	"Co blokovat">
+<!ENTITY	options.whenBlockTabLabel	"Kdy blokovat">
+<!ENTITY	options.howBlockTabLabel	"Jak blokovat">
+<!ENTITY	options.advancedTabLabel	"Rozšířené">
+<!ENTITY	options.backLabel			"&lt; Zpět">
+<!ENTITY	options.nextLabel			"Další &gt;">
+<!ENTITY	options.whatBlockDesc		"Krok 1: Zvolte stránky, které chcete blokovat.">
+<!ENTITY	options.customSetName		"Vložte vlastní název pro tuto sadu stránek (volitelné):">
+<!ENTITY	options.clearSetName		"Smazat název">
+<!ENTITY	options.sitesDesc			"Vložte doménová jména stránek, které chcete blokovat (jednu doménu na jeden řádek):">
+<!ENTITY	options.sitesTooltip		"Použijte * jako univerzální znak a + jako prefix pro výjimky">
+<!ENTITY	options.sitesLoadFromURL	"Načíst seznam stránek z URL (volitelné):">
+<!ENTITY	options.sitesURLTooltip		"Use $S to pass block set number and $T to pass UTC timestamp in milliseconds">
+<!ENTITY	options.whenBlockDesc		"Krok 2: Zvolte, kdy chcete stránky blokovat.">
+<!ENTITY	options.timesDesc			"Vložte časové rozmezí, kde chcete stránky blokovat(např. 0900-1230,1330-1700):">
+<!ENTITY	options.timesTooltip		"Ponechte prázdné pro žádné období">
+<!ENTITY	options.allDayLabel			"Celý den">
+<!ENTITY	options.alertBadTimes		"Vložte prosím rozmezí ve správném formátu. Pro časy použijte 24 hodinový formát (HHMM), pomlčku (-) mezi počátkem a koncem rozmezí, a čárku (,) nebo mezeru pro oddělení jednotlivých rozmezí.">
+<!ENTITY	options.confPrevOptsAllDay	"Opravdu chcete blokovat přístup během celého dne?">
+<!ENTITY	options.timeLimitDesc		"Vložte časový limit po kterém budou stránky zablokovány:">
+<!ENTITY	options.timeLimitTooltip	"Ponechte prázdné pro žádný limit">
+<!ENTITY	options.minsInEveryDesc		"minut během">
+<!ENTITY	options.quarterHourMenuItem	"čtvrt hodiny (15 minut)">
+<!ENTITY	options.halfHourMenuItem	"půl hodiny (30 minut)">
+<!ENTITY	options.hourMenuItem		"hodiny">
+<!ENTITY	options.twoHoursMenuItem	"2 hodin">
+<!ENTITY	options.threeHoursMenuItem	"3 hodin">
+<!ENTITY	options.fourHoursMenuItem	"4 hodin">
+<!ENTITY	options.sixHoursMenuItem	"6 hodin">
+<!ENTITY	options.halfDayMenuItem		"půl dne (12 hodin)">
+<!ENTITY	options.dayMenuItem			"dne (24 hodin)">
+<!ENTITY	options.twoDaysMenuItem		"2 dnů (48 hodin)">
+<!ENTITY	options.weekMenuItem		"týdne (7 dnů)">
+<!ENTITY	options.alertBadTimeLimit	"Vložte prosím časový limit ve správném formátu (kladné celé číslo).">
+<!ENTITY	options.modeDesc			"Zvolte, kdy stránky blokovat:">
+<!ENTITY	options.modeOrLabel			"během časových rozmezí NEBO po uplynutí limitu">
+<!ENTITY	options.modeAndLabel		"během časových rozmezí A po uplynutí limitu">
+<!ENTITY	options.daysDesc			"Vyberte dny, kdy stránky blokovat:">
+<!ENTITY	options.dayLabel0			"Ne">
+<!ENTITY	options.dayLabel1			"Po">
+<!ENTITY	options.dayLabel2			"Út">
+<!ENTITY	options.dayLabel3			"St">
+<!ENTITY	options.dayLabel4			"Čt">
+<!ENTITY	options.dayLabel5			"Pá">
+<!ENTITY	options.dayLabel6			"So">
+<!ENTITY	options.everyDayLabel		"Každý den">
+<!ENTITY	options.howBlockDesc		"Krok 3: Zvolte, jak mají být stránky blokovány.">
+<!ENTITY	options.blockDesc			"Vložte vybranou URL adresu stránky, která má být zobrazena místo zablokované stránky:">
+<!ENTITY	options.blockTooltip		"Použijte $U pro předání adresy zablokované stránky">
+<!ENTITY	options.predefinedURLs		"Předvybrané URL:">
+<!ENTITY	options.defaultPageLabel	"Výchozí stránky">
+<!ENTITY	options.delayingPageLabel	"Stránka odložení">
+<!ENTITY	options.blankPageLabel		"Prázdná stránka">
+<!ENTITY	options.homePageLabel		"Domovská stránka">
+<!ENTITY	options.activeBlockLabel	"Aktivně blokovat otevřené stránky jakmile začne vybrané období nebo uplyne časový limit">
+<!ENTITY	options.countFocusLabel		"Počítat čas strávený na stránkách pouze pokud je panel aktivní">
+<!ENTITY	options.delaySecsDesc1		"Odložit přístup na stránky o">
+<!ENTITY	options.delaySecsDesc2		"sekund při použití stránky odložení">
+<!ENTITY	options.advancedWarnDesc1	"Upozornění!">
+<!ENTITY	options.advancedWarnDesc2	"Ujistěte se, že rozumíte následkům těchto možností dříve, než některou vyberete.">
+<!ENTITY	options.accessControlLabel	"Kontrola přístupu">
+<!ENTITY	options.prevOptsLabel		"Zabránit přístupu k těmto možnostem této sady v časech, kdy jsou stránky blokovány">
+<!ENTITY	options.prevAddonsLabel		"Zabránit přístupu do Správce doplňků v časech, kdy jsou stránky blokovány">
+<!ENTITY	options.prevConfigLabel		"Zabránit přístupu do about:config v časech, kdy jsou stránky blokovány">
+<!ENTITY	options.lockdownLabel		"Uzamčení">
+<!ENTITY	options.cancelLockdownLabel	"Zrušit právě aktivní uzamčení">
+<!ENTITY	options.confCancelLockdown	"Opravud chcete zrušit právě aktivní uzamčení této sady stránek?">
+<!ENTITY	options.optionsAccessLabel	"Možnosti přístupu">
+<!ENTITY	options.accessDesc			"Vložte požadavky pro přístup do možností:">
+<!ENTITY	options.accessMenuItem0		"Nepožadovat žádné heslo ani přístupový kód">
+<!ENTITY	options.accessMenuItem1		"Požadovat heslo">
+<!ENTITY	options.accessMenuItem2		"Požadovat zadání náhodného kódu s 32 znaky">
+<!ENTITY	options.accessMenuItem3		"Požadovat zadání náhodného kódu s 64 znaky">
+<!ENTITY	options.accessMenuItem4		"Požadovat zadání náhodného kódu se 128 znaky">
+<!ENTITY	options.passwordDesc		"Vložte heslo pro přístup do možností:">
+<!ENTITY	options.clearPasswordLabel	"Smazat heslo">
+<!ENTITY	options.hidePasswordLabel	"Skrývat znaky hesla při zadávání">
+<!ENTITY	options.browserModsLabel	"Úpravy prohlížeče">
+<!ENTITY	options.hideExtension		"Skrýt rozšíření LeechBlock ve Správci doplňků">
+<!ENTITY	options.hideSafeMode		"Skrýt položku nabídky &quot;Restartovat se zakázanými doplňky…&quot; (nutný restart prohlížeče)">
+<!ENTITY	options.miscLabel			"Různé">
+<!ENTITY	options.warnMessageDesc1	"Zobrazit varovnou zprávu">
+<!ENTITY	options.warnMessageDesc2	"sekund před zablokováním stránky">
+<!ENTITY	options.warnMessageTooltip	"Ponechte prázdné pokud nechcete být varováni">
+<!ENTITY	options.alertBadSeconds		"Vložte prosím počet sekund ve správném formátu (kladné celé číslo).">
+<!ENTITY	options.showTimeLeftLabel	"Zobrazit zbývající čas do zablokování stránky ve stavovém řádku">
+<!ENTITY	options.blockEmbeddedLabel	"Blokovat vložené stránky (např. vnitřní rámy)">
+<!ENTITY	options.keepPageBackLabel	"Ponechat blokovanou stránky v historii tlačítka 'Zpět'">
+<!ENTITY	options.hideContMenuLabel	"Skrýt kontextovou nabídku LeechBlock (nutný restart prohlížeče)">
+<!ENTITY	options.hideTimeLeftLabel	"Skrýt &quot;LeechBlock Zbývající čas&quot; položku panelu při neaktivitě">
+<!ENTITY	options.exportImportLabel	"Export / Import">
+<!ENTITY	options.exportOptionsLabel	"Možnosti exportu">
+<!ENTITY	options.importOptionsLabel	"Možnosti importu">
+<!ENTITY	options.openVersionHistory	"Historie verzí">
+<!ENTITY	options.openHomePage		"Domovská stránka">
+<!ENTITY	options.openExamplesPage	"Příklady">
+<!ENTITY	options.openFAQPage			"FAQ">
+<!ENTITY	options.supportLeechBlock	"Podpořte LeechBlock">
+
+<!-- Statistics dialog -->
+<!ENTITY	stats.title					"LeechBlock Statistiky">
+<!ENTITY	stats.startTimeLabel		"Datum/Čas zahájení">
+<!ENTITY	stats.totalTimeLabel		"Strávený čas celkem">
+<!ENTITY	stats.perDayTimeLabel		"Strávený čas denně">
+<!ENTITY	stats.timeLeftLabel			"Strávený čas během blokované doby">
+<!ENTITY	stats.naLabel				"N/A">
+<!ENTITY	stats.restartAllLabel		"Restartovat vše">
+<!ENTITY	stats.restartLabel			"Restartovat">
+
+<!-- Lockdown dialog -->
+<!ENTITY	lockdown.title				"LeechBlock Uzamčení">
+<!ENTITY	lockdown.enterDurationLabel	"Vložte trvání uzamčení:">
+<!ENTITY	lockdown.hoursLabel			"hodin">
+<!ENTITY	lockdown.minutesLabel		"minut">
+<!ENTITY	lockdown.selectSitesLabel	"Vyberte stránky blokované během uzamčení:">
+<!ENTITY	lockdown.setSelectionLabel	"Stránky zvolené v">
+<!ENTITY	lockdown.alertLockdown		"Uzamčení je aktivní a bude trvat do:">
+
+<!-- Localization for internal HTML pages -->
+<!ENTITY	language					"cs">
+<!ENTITY	siteBlocked					"Stránka zablokována">
+<!ENTITY	pageAccessBlocked1			"Stránka, kterou se pokoušíte navštívit, byla zablokována pomocí ">
+<!ENTITY	pageAccessBlocked2			".">
+<!ENTITY	pageAccessDelayed1			"Stránka, kterou se pokoušíte navštívit, byla dočasně zablokována pomocí ">
+<!ENTITY	pageAccessDelayed2			".">
+<!ENTITY	youCanClickHere1			"Můžete ">
+<!ENTITY	youCanClickHere2			"kliknout zde">
+<!ENTITY	youCanClickHere3			" pro přechod na stránku jakmile zablokování vyprší.">
+<!ENTITY	pageWillBeLoaded1			"Stránka bude načtena za ">
+<!ENTITY	pageWillBeLoaded2			" sekund.">
+<!ENTITY	considerSupport1			"Pokud vám LeechBlock pomohl, zvažte prosím podporu">
+<!ENTITY	considerSupport2			"pro pokračování jeho vývoje posláním ">
+<!ENTITY	considerSupport3			"příspěvku nebo napsáním krátké recenze">
+<!ENTITY	considerSupport4			".">

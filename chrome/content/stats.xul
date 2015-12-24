@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://leechblock/locale/leechblock.dtd">
+
+<dialog id="lb-stats-dialog" title="&stats.title;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept" defaultButton="accept"
+	onload="LeechBlock.statsRefresh();" onfocus="LeechBlock.statsRefresh();">
+
+	<script type="application/x-javascript" src="const.js"/>
+	<script type="application/x-javascript" src="core.js"/>
+	<script type="application/x-javascript" src="stats.js"/>
+	<script type="application/x-javascript">
+
+	LeechBlock.getDefaultSetName = function (set) {
+		return ("&blockSet; " + set);
+	}
+
+	</script>
+
+	<vbox align="center" flex="1">
+		<grid style="text-align: center;" flex="1">
+			<columns>
+				<column flex="1"/>
+				<column flex="1"/>
+				<column flex="1"/>
+				<column flex="1"/>
+				<column flex="1"/>
+			</columns>
+			<rows>
+				<row align="center">
+					<label value="&blockSet;" class="header"
+						style="text-decoration: underline;"/>
+					<label value="&stats.startTimeLabel;" class="header"
+						style="text-decoration: underline;"/>
+					<label value="&stats.totalTimeLabel;" class="header"
+						style="text-decoration: underline;"/>
+					<label value="&stats.perDayTimeLabel;" class="header"
+						style="text-decoration: underline;"/>
+					<label value="&stats.timeLeftLabel;" class="header"
+						style="text-decoration: underline;"/>
+					<button label="&stats.restartAllLabel;"
+						oncommand="LeechBlock.statsRestartAll();"/>
+				</row>
+				<row align="center">
+					<label id="lb-set-name1" value="&blockSet; 1"/>
+					<label id="lb-start-time1" value="&stats.naLabel;"/>
+					<label id="lb-total-time1" value="&stats.naLabel;"/>
+					<label id="lb-per-day-time1" value="&stats.naLabel;"/>
+					<label id="lb-time-left1" value="&stats.naLabel;"/>
+					<button label="&stats.restartLabel;"
+						oncommand="LeechBlock.statsRestart(1);"/>
+				</row>
+				<row align="center">
+					<label id="lb-set-name2" value="&blockSet; 2"/>
+					<label id="lb-start-time2" value="&stats.naLabel;"/>
+					<label id="lb-total-time2" value="&stats.naLabel;"/>
+					<label id="lb-per-day-time2" value="&stats.naLabel;"/>
+					<label id="lb-time-left2" value="&stats.naLabel;"/>
+					<button label="&stats.restartLabel;"
+						oncommand="LeechBlock.statsRestart(2);"/>
+				</row>
+				<row align="center">
+					<label id="lb-set-name3" value="&blockSet; 3"/>
+					<label id="lb-start-time3" value="&stats.naLabel;"/>
+					<label id="lb-total-time3" value="&stats.naLabel;"/>
+					<label id="lb-per-day-time3" value="&stats.naLabel;"/>
+					<label id="lb-time-left3" value="&stats.naLabel;"/>
+					<button label="&stats.restartLabel;"
+						oncommand="LeechBlock.statsRestart(3);"/>
+				</row>
+				<row align="center">
+					<label id="lb-set-name4" value="&blockSet; 4"/>
+					<label id="lb-start-time4" value="&stats.naLabel;"/>
+					<label id="lb-total-time4" value="&stats.naLabel;"/>
+					<label id="lb-per-day-time4" value="&stats.naLabel;"/>
+					<label id="lb-time-left4" value="&stats.naLabel;"/>
+					<button label="&stats.restartLabel;"
+						oncommand="LeechBlock.statsRestart(4);"/>
+				</row>
+				<row align="center">
+					<label id="lb-set-name5" value="&blockSet; 5"/>
+					<label id="lb-start-time5" value="&stats.naLabel;"/>
+					<label id="lb-total-time5" value="&stats.naLabel;"/>
+					<label id="lb-per-day-time5" value="&stats.naLabel;"/>
+					<label id="lb-time-left5" value="&stats.naLabel;"/>
+					<button label="&stats.restartLabel;"
+						oncommand="LeechBlock.statsRestart(5);"/>
+				</row>
+				<row align="center">
+					<label id="lb-set-name6" value="&blockSet; 6"/>
+					<label id="lb-start-time6" value="&stats.naLabel;"/>
+					<label id="lb-total-time6" value="&stats.naLabel;"/>
+					<label id="lb-per-day-time6" value="&stats.naLabel;"/>
+					<label id="lb-time-left6" value="&stats.naLabel;"/>
+					<button label="&stats.restartLabel;"
+						oncommand="LeechBlock.statsRestart(6);"/>
+				</row>
+			</rows>
+		</grid>
+	</vbox>
+
+</dialog>

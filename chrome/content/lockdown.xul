@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://leechblock/locale/leechblock.dtd">
+
+<dialog id="lb-lockdown-dialog" title="&lockdown.title;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept,cancel" defaultButton="accept"
+	onload="LeechBlock.lockdownInit();"
+	ondialogaccept="return LeechBlock.lockdownOK();"
+	ondialogcancel="return LeechBlock.lockdownCancel();">
+
+	<script type="application/x-javascript" src="const.js"/>
+	<script type="application/x-javascript" src="core.js"/>
+	<script type="application/x-javascript" src="lockdown.js"/>
+	<script type="application/x-javascript">
+
+	LeechBlock.alertLockdown = function (endTime) {
+		LeechBlock.PROMPTS.alert(null,
+				"&lockdown.title;",
+				"&lockdown.alertLockdown; " + endTime);
+	}
+
+	LeechBlock.getLockdownBlockSetLabel = function (set) {
+		let setName = LeechBlock.getUniCharPref("setName" + set);
+		if (setName != "") {
+			return setName;
+		} else {
+			return "&blockSet; " + set;
+		}
+	}
+
+	</script>
+
+	<vbox flex="1">
+		<groupbox>
+			<caption label="&lockdown.enterDurationLabel;"/>
+			<hbox align="center">
+				<menulist id="lb-lockdown-hours" editable="true">
+					<menupopup>
+						<menuitem label="0" value="0"/>
+						<menuitem label="1" value="1"/>
+						<menuitem label="2" value="2"/>
+						<menuitem label="3" value="3"/>
+						<menuitem label="4" value="4"/>
+						<menuitem label="5" value="5"/>
+						<menuitem label="6" value="6"/>
+						<menuitem label="12" value="12"/>
+						<menuitem label="18" value="18"/>
+						<menuitem label="24" value="24"/>
+					</menupopup>
+				</menulist>
+				<label value="&lockdown.hoursLabel;" control="lb-lockdown-hours"/>
+				<menulist id="lb-lockdown-mins" editable="true">
+					<menupopup>
+						<menuitem label="0" value="0"/>
+						<menuitem label="5" value="5"/>
+						<menuitem label="10" value="10"/>
+						<menuitem label="15" value="15"/>
+						<menuitem label="20" value="20"/>
+						<menuitem label="25" value="25"/>
+						<menuitem label="30" value="30"/>
+						<menuitem label="35" value="35"/>
+						<menuitem label="40" value="40"/>
+						<menuitem label="45" value="45"/>
+						<menuitem label="50" value="50"/>
+						<menuitem label="55" value="55"/>
+					</menupopup>
+				</menulist>
+				<label value="&lockdown.minutesLabel;" control="lb-lockdown-mins"/>
+				<spacer flex="1"/>
+			</hbox>
+		</groupbox>
+		<groupbox>
+			<caption label="&lockdown.selectSitesLabel;"/>
+			<hbox align="center">
+				<checkbox id="lb-lockdown-set1" label="&lockdown.setSelectionLabel;"/>
+				<spacer flex="1"/>
+			</hbox>
+			<hbox align="center">
+				<checkbox id="lb-lockdown-set2" label="&lockdown.setSelectionLabel;"/>
+				<spacer flex="1"/>
+			</hbox>
+			<hbox align="center">
+				<checkbox id="lb-lockdown-set3" label="&lockdown.setSelectionLabel;"/>
+				<spacer flex="1"/>
+			</hbox>
+			<hbox align="center">
+				<checkbox id="lb-lockdown-set4" label="&lockdown.setSelectionLabel;"/>
+				<spacer flex="1"/>
+			</hbox>
+			<hbox align="center">
+				<checkbox id="lb-lockdown-set5" label="&lockdown.setSelectionLabel;"/>
+				<spacer flex="1"/>
+			</hbox>
+			<hbox align="center">
+				<checkbox id="lb-lockdown-set6" label="&lockdown.setSelectionLabel;"/>
+				<spacer flex="1"/>
+			</hbox>
+		</groupbox>
+	</vbox>
+
+</dialog>

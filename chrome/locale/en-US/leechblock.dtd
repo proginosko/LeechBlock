@@ -1,0 +1,157 @@
+<!ENTITY	leechblock					"LeechBlock">
+<!ENTITY	blockSet					"Block Set">
+
+<!-- Menu options -->
+<!ENTITY	menu.lockdown				"Lockdown…">
+<!ENTITY	menu.options				"Options…">
+<!ENTITY	menu.stats					"Statistics…">
+<!ENTITY	menu.addThisSiteLabel		"Add $S to $B">
+
+<!-- Toolbar widgets -->
+<!ENTITY	toolbar.timeLeft			"LeechBlock Time Left">
+<!ENTITY	tooltip.timeLeft			"Shows time left before this site is blocked">
+
+<!-- Warning dialog -->
+<!ENTITY	warning.title				"LeechBlock Warning">
+<!ENTITY	warning.alertBlock			"Sites in $B will be blocked in $S seconds.">
+
+<!-- Options dialog -->
+<!ENTITY	options.passwordPrompt		"Enter the password for access to options:">
+<!ENTITY	options.accessCodePrompt	"Enter the following code for access to options:">
+<!ENTITY	options.title				"LeechBlock Options">
+<!ENTITY	options.accessTabLabel		"Access Control">
+<!ENTITY	options.generalTabLabel		"General">
+<!ENTITY	options.whatBlockTabLabel	"What to Block">
+<!ENTITY	options.whenBlockTabLabel	"When to Block">
+<!ENTITY	options.howBlockTabLabel	"How to Block">
+<!ENTITY	options.advancedTabLabel	"Advanced">
+<!ENTITY	options.backLabel			"&lt; Back">
+<!ENTITY	options.nextLabel			"Next &gt;">
+<!ENTITY	options.whatBlockDesc		"Step 1: Specify the sites you want to block.">
+<!ENTITY	options.customSetName		"Enter a custom name for this block set (optional):">
+<!ENTITY	options.clearSetName		"Clear Custom Name">
+<!ENTITY	options.sitesDesc			"Enter the domain names of the sites to block (one item per line):">
+<!ENTITY	options.sitesTooltip		"Use * as wildcard and + to prefix exceptions">
+<!ENTITY	options.sitesLoadFromURL	"Load list of sites from URL (optional):">
+<!ENTITY	options.sitesURLTooltip		"Use $S to pass block set number and $T to pass UTC timestamp in milliseconds">
+<!ENTITY	options.whenBlockDesc		"Step 2: Specify when you want to block these sites.">
+<!ENTITY	options.timesDesc			"Enter the time periods within which to block these sites (e.g. 0900-1230,1330-1700):">
+<!ENTITY	options.timesTooltip		"Leave blank for no time periods">
+<!ENTITY	options.allDayLabel			"All Day">
+<!ENTITY	options.alertBadTimes		"Please enter the time periods in the correct format. Use 24-hour clock format (HHMM) for times, a dash (-) between start time and end time, and commas (,) or spaces to separate time periods.">
+<!ENTITY	options.confPrevOptsAllDay	"Are you sure you want to prevent access to options all day?">
+<!ENTITY	options.timeLimitDesc		"Enter a time limit after which to block these sites:">
+<!ENTITY	options.timeLimitTooltip	"Leave blank for no time limit">
+<!ENTITY	options.minsInEveryDesc		"minutes in every">
+<!ENTITY	options.quarterHourMenuItem	"quarter-hour (15 mins)">
+<!ENTITY	options.halfHourMenuItem	"half-hour (30 mins)">
+<!ENTITY	options.hourMenuItem		"hour">
+<!ENTITY	options.twoHoursMenuItem	"2 hours">
+<!ENTITY	options.threeHoursMenuItem	"3 hours">
+<!ENTITY	options.fourHoursMenuItem	"4 hours">
+<!ENTITY	options.sixHoursMenuItem	"6 hours">
+<!ENTITY	options.halfDayMenuItem		"half-day (12 hours)">
+<!ENTITY	options.dayMenuItem			"day (24 hours)">
+<!ENTITY	options.twoDaysMenuItem		"2 days (48 hours)">
+<!ENTITY	options.weekMenuItem		"week (7 days)">
+<!ENTITY	options.alertBadTimeLimit	"Please enter the time limit in the correct format (as a positive whole number).">
+<!ENTITY	options.modeDesc			"Select when to block these sites:">
+<!ENTITY	options.modeOrLabel			"within time periods OR after time limit">
+<!ENTITY	options.modeAndLabel		"within time periods AND after time limit">
+<!ENTITY	options.daysDesc			"Select the days on which to block these sites:">
+<!ENTITY	options.dayLabel0			"Sun">
+<!ENTITY	options.dayLabel1			"Mon">
+<!ENTITY	options.dayLabel2			"Tue">
+<!ENTITY	options.dayLabel3			"Wed">
+<!ENTITY	options.dayLabel4			"Thu">
+<!ENTITY	options.dayLabel5			"Fri">
+<!ENTITY	options.dayLabel6			"Sat">
+<!ENTITY	options.everyDayLabel		"Every Day">
+<!ENTITY	options.howBlockDesc		"Step 3: Specify how you want to block these sites.">
+<!ENTITY	options.blockDesc			"Enter the fully specified URL of the page to show instead of these blocked sites:">
+<!ENTITY	options.blockTooltip		"Use $U to pass URL of blocked page">
+<!ENTITY	options.predefinedURLs		"Predefined URLs:">
+<!ENTITY	options.defaultPageLabel	"Default Page">
+<!ENTITY	options.delayingPageLabel	"Delaying Page">
+<!ENTITY	options.blankPageLabel		"Blank Page">
+<!ENTITY	options.homePageLabel		"Home Page">
+<!ENTITY	options.activeBlockLabel	"Actively block pages on these sites once time period is entered or time limit is exceeded">
+<!ENTITY	options.countFocusLabel		"Count time spent on these sites only when browser tab is active">
+<!ENTITY	options.delaySecsDesc1		"Delay access to sites by">
+<!ENTITY	options.delaySecsDesc2		"seconds when delaying page is used">
+<!ENTITY	options.advancedWarnDesc1	"Warning!">
+<!ENTITY	options.advancedWarnDesc2	"Be sure you understand the consequences of these options before selecting any of them.">
+<!ENTITY	options.accessControlLabel	"Access Control">
+<!ENTITY	options.prevOptsLabel		"Prevent access to options for this block set at times when these sites are blocked">
+<!ENTITY	options.prevAddonsLabel		"Prevent access to about:addons at times when these sites are blocked">
+<!ENTITY	options.prevConfigLabel		"Prevent access to about:config and about:support at times when these sites are blocked">
+<!ENTITY	options.lockdownLabel		"Lockdown">
+<!ENTITY	options.cancelLockdownLabel	"Cancel Currently Active Lockdown">
+<!ENTITY	options.confCancelLockdown	"Are you sure you want to cancel the currently active lockdown for this block set?">
+<!ENTITY	options.optionsAccessLabel	"Options Access">
+<!ENTITY	options.accessDesc			"Select the requirement for access to options:">
+<!ENTITY	options.accessMenuItem0		"Don't require the user to enter any password or access code">
+<!ENTITY	options.accessMenuItem1		"Require the user to enter a password">
+<!ENTITY	options.accessMenuItem2		"Require the user to enter a random 32-character access code">
+<!ENTITY	options.accessMenuItem3		"Require the user to enter a random 64-character access code">
+<!ENTITY	options.accessMenuItem4		"Require the user to enter a random 128-character access code">
+<!ENTITY	options.passwordDesc		"Enter the password for access to options:">
+<!ENTITY	options.clearPasswordLabel	"Clear Password">
+<!ENTITY	options.hidePasswordLabel	"Hide password characters when entered at prompt">
+<!ENTITY	options.browserModsLabel	"Browser Modifications">
+<!ENTITY	options.hideExtension		"Hide LeechBlock extension in Add-ons Manager">
+<!ENTITY	options.hideSafeMode		"Hide &quot;Restart with Add-ons Disabled…&quot; menu item (restart browser to apply new setting)">
+<!ENTITY	options.miscLabel			"Miscellaneous">
+<!ENTITY	options.warnMessageDesc1	"Display warning message">
+<!ENTITY	options.warnMessageDesc2	"seconds before site is blocked">
+<!ENTITY	options.warnMessageTooltip	"Leave blank for no warning message">
+<!ENTITY	options.alertBadSeconds		"Please enter the number of seconds in the correct format (as a positive whole number).">
+<!ENTITY	options.showTimeLeftLabel	"Show time left before site is blocked in status bar">
+<!ENTITY	options.blockEmbeddedLabel	"Block embedded pages (e.g. internal frames)">
+<!ENTITY	options.keepPageBackLabel	"Keep blocked page in browser's 'Back' history">
+<!ENTITY	options.hideContMenuLabel	"Hide LeechBlock context menu (restart browser to apply new setting)">
+<!ENTITY	options.hideTimeLeftLabel	"Hide &quot;LeechBlock Time Left&quot; toolbar item when inactive">
+<!ENTITY	options.exportImportLabel	"Export / Import">
+<!ENTITY	options.exportOptionsLabel	"Export Options">
+<!ENTITY	options.importOptionsLabel	"Import Options">
+<!ENTITY	options.openVersionHistory	"Version History">
+<!ENTITY	options.openHomePage		"Home Page">
+<!ENTITY	options.openExamplesPage	"Examples">
+<!ENTITY	options.openFAQPage			"FAQ">
+<!ENTITY	options.supportLeechBlock	"Support LeechBlock">
+
+<!-- Statistics dialog -->
+<!ENTITY	stats.title					"LeechBlock Statistics">
+<!ENTITY	stats.startTimeLabel		"Start Date/Time">
+<!ENTITY	stats.totalTimeLabel		"Total Time Spent">
+<!ENTITY	stats.perDayTimeLabel		"Time Spent Per Day">
+<!ENTITY	stats.timeLeftLabel			"Time Left in Limit Period">
+<!ENTITY	stats.naLabel				"N/A">
+<!ENTITY	stats.restartAllLabel		"Restart All">
+<!ENTITY	stats.restartLabel			"Restart">
+
+<!-- Lockdown dialog -->
+<!ENTITY	lockdown.title				"LeechBlock Lockdown">
+<!ENTITY	lockdown.enterDurationLabel	"Enter the duration of the lockdown:">
+<!ENTITY	lockdown.hoursLabel			"hour(s)">
+<!ENTITY	lockdown.minutesLabel		"minute(s)">
+<!ENTITY	lockdown.selectSitesLabel	"Select the sites to block during the lockdown:">
+<!ENTITY	lockdown.setSelectionLabel	"Sites specified in">
+<!ENTITY	lockdown.alertLockdown		"A lockdown is currently active and will continue until:">
+
+<!-- Localization for internal HTML pages -->
+<!ENTITY	language					"en">
+<!ENTITY	siteBlocked					"Site Blocked">
+<!ENTITY	pageAccessBlocked1			"The page you're attempting to access has been blocked by ">
+<!ENTITY	pageAccessBlocked2			".">
+<!ENTITY	pageAccessDelayed1			"The page you're attempting to access has been temporarily blocked by ">
+<!ENTITY	pageAccessDelayed2			".">
+<!ENTITY	youCanClickHere1			"You can ">
+<!ENTITY	youCanClickHere2			"click here">
+<!ENTITY	youCanClickHere3			" to access the page once the block has expired.">
+<!ENTITY	pageWillBeLoaded1			"The page will be loaded in ">
+<!ENTITY	pageWillBeLoaded2			" seconds.">
+<!ENTITY	considerSupport1			"If LeechBlock has improved your life, please consider supporting">
+<!ENTITY	considerSupport2			"its continued development by ">
+<!ENTITY	considerSupport3			"making a contribution or writing a review">
+<!ENTITY	considerSupport4			".">

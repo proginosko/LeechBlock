@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://leechblock/skin/toolbar.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://leechblock/locale/leechblock.dtd">
+
+<overlay id="leechblock-browser-overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript" src="core.js"/>
+	<script type="application/x-javascript" src="browser.js"/>
+	<script type="application/x-javascript">
+
+	LeechBlock.alertBlockWarning = function (set, setName, secsLeft) {
+		if (setName == "") {
+			setName = "&blockSet; " + set;
+		}
+		LeechBlock.PROMPTS.alert(null,
+				"&warning.title;",
+				"&warning.alertBlock;".replace(/\$B/, setName).replace(/\$S/, secsLeft));
+	}
+
+	LeechBlock.getAddSiteMenuItemLabel = function (site, set, setName) {
+		if (setName != "") {
+			return "&menu.addThisSiteLabel;".replace(/\$S/, site).replace(/\$B/, setName);
+		} else {
+			return "&menu.addThisSiteLabel;".replace(/\$S/, site).replace(/\$B/, "&blockSet; " + set);
+		}
+	}
+
+	</script>
+
+	<menupopup id="menu_ToolsPopup">
+		<menuseparator insertbefore="prefSep"/>
+		<menu id="leechblock-tools-menu" label="&leechblock;"
+			insertbefore="prefSep">
+			<menupopup id="leechblock-tools-menupopup">
+				<menuitem id="leechblock-tools-lockdown-menuitem" label="&menu.lockdown;"
+					oncommand="LeechBlock.openLockdownDialog();"/>
+				<menuitem id="leechblock-tools-options-menuitem" label="&menu.options;"
+					oncommand="LeechBlock.openOptionsDialog();"/>
+				<menuitem id="leechblock-tools-stats-menuitem" label="&menu.stats;"
+					oncommand="LeechBlock.openStatsDialog();"/>
+			</menupopup>
+		</menu>
+	</menupopup>
+
+	<popup id="contentAreaContextMenu">
+		<menuseparator/>
+		<menu id="leechblock-context-menu" label="&leechblock;">
+			<menupopup id="leechblock-context-menupopup"
+				oncommand="LeechBlock.addSiteToSet(event.target, document.commandDispatcher.focusedWindow);"
+				onpopupshowing="LeechBlock.prepareMenu(event.target, document.commandDispatcher.focusedWindow);">
+				<menuitem id="leechblock-context-lockdown-menuitem" label="&menu.lockdown;"
+					oncommand="LeechBlock.openLockdownDialog();"/>
+				<menuitem id="leechblock-context-options-menuitem" label="&menu.options;"
+					oncommand="LeechBlock.openOptionsDialog();"/>
+				<menuitem id="leechblock-context-stats-menuitem" label="&menu.stats;"
+					oncommand="LeechBlock.openStatsDialog();"/>
+			</menupopup>
+		</menu>
+	</popup>
+
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="leechblock-toolbar-button" type="menu"
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+			label="&leechblock;" tooltiptext="&leechblock;" orient="horizontal">
+			<menupopup id="leechblock-toolbar-menupopup"
+				oncommand="LeechBlock.addSiteToSet(event.target, document.commandDispatcher.focusedWindow);"
+				onpopupshowing="LeechBlock.prepareMenu(event.target, document.commandDispatcher.focusedWindow);">
+				<menuitem id="leechblock-toolbar-lockdown-menuitem" label="&menu.lockdown;"
+					oncommand="LeechBlock.openLockdownDialog();"/>
+				<menuitem id="leechblock-toolbar-options-menuitem" label="&menu.options;"
+					oncommand="LeechBlock.openOptionsDialog();"/>
+				<menuitem id="leechblock-toolbar-stats-menuitem" label="&menu.stats;"
+					oncommand="LeechBlock.openStatsDialog();"/>
+			</menupopup>
+		</toolbarbutton>
+		<toolbaritem id="leechblock-toolbar-time-left"
+			label="&toolbar.timeLeft;" tooltiptext="&tooltip.timeLeft;">
+			<hbox align="center">
+				<description id="leechblock-time-left" value="--:--:--"/>
+			</hbox>
+		</toolbaritem>
+	</toolbarpalette>
+
+</overlay>

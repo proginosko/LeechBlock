@@ -1,0 +1,1517 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://leechblock/locale/leechblock.dtd">
+
+<dialog id="lb-options-dialog" title="&options.title;"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	buttons="accept,cancel" defaultButton="accept"
+	onload="LeechBlock.optionsInit();"
+	ondialogaccept="return LeechBlock.optionsOK();"
+	ondialogcancel="return LeechBlock.optionsCancel();">
+
+	<script type="application/x-javascript" src="const.js"/>
+	<script type="application/x-javascript" src="core.js"/>
+	<script type="application/x-javascript" src="options.js"/>
+	<script type="application/x-javascript">
+
+	LeechBlock.alertBadTimes = function () {
+		LeechBlock.PROMPTS.alert(null,
+				"&options.title;",
+				"&options.alertBadTimes;");
+	}
+
+	LeechBlock.alertBadTimeLimit = function () {
+		LeechBlock.PROMPTS.alert(null,
+				"&options.title;",
+				"&options.alertBadTimeLimit;");
+	}
+
+	LeechBlock.alertBadSeconds = function () {
+		LeechBlock.PROMPTS.alert(null,
+				"&options.title;",
+				"&options.alertBadSeconds;");
+	}
+
+	LeechBlock.confirmPrevOptsAllDay = function () {
+		let check = {value: false};
+		let flags =
+				LeechBlock.PROMPTS.BUTTON_POS_0 * LeechBlock.PROMPTS.BUTTON_TITLE_YES +
+				LeechBlock.PROMPTS.BUTTON_POS_1 * LeechBlock.PROMPTS.BUTTON_TITLE_NO;
+		let button = LeechBlock.PROMPTS.confirmEx(null,
+				"&options.title;",
+				"&options.confPrevOptsAllDay;",
+				flags, "", "", "", null, check);
+		return (button == 0);
+	}
+
+	LeechBlock.confirmCancelLockdown = function () {
+		let check = {value: false};
+		let flags =
+				LeechBlock.PROMPTS.BUTTON_POS_0 * LeechBlock.PROMPTS.BUTTON_TITLE_YES +
+				LeechBlock.PROMPTS.BUTTON_POS_1 * LeechBlock.PROMPTS.BUTTON_TITLE_NO;
+		let button = LeechBlock.PROMPTS.confirmEx(null,
+				"&options.title;",
+				"&options.confCancelLockdown;",
+				flags, "", "", "", null, check);
+		return (button == 0);
+	}
+
+	LeechBlock.requestPassword = function (hide) {
+		let userpassword = {}, check = {};
+		if (hide) {
+			LeechBlock.PROMPTS.promptPassword(null,
+					"&options.title;",
+					"&options.passwordPrompt;",
+					userpassword, null, check);
+		} else {
+			LeechBlock.PROMPTS.prompt(null,
+					"&options.title;",
+					"&options.passwordPrompt;",
+					userpassword, null, check);
+		}
+		return userpassword.value;
+	}
+
+	</script>
+
+	<tabbox id="lb-options-tabbox">
+
+		<tabs>
+			<tab id="lb-tab-set1" label="&blockSet; 1"
+				oncommand="LeechBlock.setInnerTab(1, 0);"/>
+			<tab id="lb-tab-set2" label="&blockSet; 2"
+				oncommand="LeechBlock.setInnerTab(2, 0);"/>
+			<tab id="lb-tab-set3" label="&blockSet; 3"
+				oncommand="LeechBlock.setInnerTab(3, 0);"/>
+			<tab id="lb-tab-set4" label="&blockSet; 4"
+				oncommand="LeechBlock.setInnerTab(4, 0);"/>
+			<tab id="lb-tab-set5" label="&blockSet; 5"
+				oncommand="LeechBlock.setInnerTab(5, 0);"/>
+			<tab id="lb-tab-set6" label="&blockSet; 6"
+				oncommand="LeechBlock.setInnerTab(6, 0);"/>
+			<tab id="lb-tab-access" label="&options.accessTabLabel;"/>
+			<tab id="lb-tab-general" label="&options.generalTabLabel;"/>
+		</tabs>
+
+		<tabpanels>
+
+			<!-- Block Set 1 -->
+			<tabpanel>
+				<tabbox id="lb-tabbox-set1">
+					<tabs>
+						<tab id="lb-tab-set1a" label="&options.whatBlockTabLabel;"/>
+						<tab id="lb-tab-set1b" label="&options.whenBlockTabLabel;"/>
+						<tab id="lb-tab-set1c" label="&options.howBlockTabLabel;"/>
+						<tab id="lb-tab-set1d" label="&options.advancedTabLabel;"/>
+					</tabs>
+					<tabpanels>
+						<!-- What to Block (Set 1) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whatBlockDesc;</description>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.customSetName;</description>
+									<textbox id="lb-set-name1" flex="1"/>
+									<button id="lb-clear-set-name1"
+										label="&options.clearSetName;"
+										oncommand="LeechBlock.clearSetName(1);"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.sitesDesc;</description>
+								<textbox id="lb-sites1" multiline="true" flex="1"
+									rows="6" tooltiptext="&options.sitesTooltip;"/>
+								<hbox align="center">
+									<description>&options.sitesLoadFromURL;</description>
+									<textbox id="lb-sites-URL1" flex="1"
+										tooltiptext="&options.sitesURLTooltip;"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(1, 1);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- When to Block (Set 1) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whenBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.timesDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-times1" flex="1"
+										tooltiptext="&options.timesTooltip;"/>
+									<button id="lb-all-day1"
+										label="&options.allDayLabel;"
+										oncommand="LeechBlock.setAllDay(1);"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.timeLimitDesc;</description>
+									<textbox id="lb-limit-mins1" size="4"
+										tooltiptext="&options.timeLimitTooltip;"/>
+									<description>&options.minsInEveryDesc;</description>
+									<menulist id="lb-limit-period1">
+										<menupopup>
+											<menuitem label="&#160;" value=""/>
+											<menuitem label="&options.quarterHourMenuItem;"
+												value="900"/>
+											<menuitem label="&options.halfHourMenuItem;"
+												value="1800"/>
+											<menuitem label="&options.hourMenuItem;"
+												value="3600"/>
+											<menuitem label="&options.twoHoursMenuItem;"
+												value="7200"/>
+											<menuitem label="&options.threeHoursMenuItem;"
+												value="10800"/>
+											<menuitem label="&options.fourHoursMenuItem;"
+												value="14400"/>
+											<menuitem label="&options.sixHoursMenuItem;"
+												value="21600"/>
+											<menuitem label="&options.halfDayMenuItem;"
+												value="43200"/>
+											<menuitem label="&options.dayMenuItem;"
+												value="86400"/>
+											<menuitem label="&options.twoDaysMenuItem;"
+												value="172800"/>
+											<menuitem label="&options.weekMenuItem;"
+												value="604800"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.modeDesc;</description>
+									<menulist id="lb-mode1">
+										<menupopup>
+											<menuitem label="&options.modeOrLabel;"/>
+											<menuitem label="&options.modeAndLabel;"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.daysDesc;</description>
+								<hbox align="center">
+									<checkbox id="lb-day01" label="&options.dayLabel0;"/>
+									<checkbox id="lb-day11" label="&options.dayLabel1;"/>
+									<checkbox id="lb-day21" label="&options.dayLabel2;"/>
+									<checkbox id="lb-day31" label="&options.dayLabel3;"/>
+									<checkbox id="lb-day41" label="&options.dayLabel4;"/>
+									<checkbox id="lb-day51" label="&options.dayLabel5;"/>
+									<checkbox id="lb-day61" label="&options.dayLabel6;"/>
+									<button id="lb-every-day1"
+										label="&options.everyDayLabel;"
+										oncommand="LeechBlock.setEveryDay(1);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(1, 0);"/>
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(1, 2);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- How to Block (Set 1) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.howBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.blockDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-block-page1" flex="1"
+										tooltiptext="&options.blockTooltip;"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.predefinedURLs;</description>
+									<button id="lb-default-page1"
+										label="&options.defaultPageLabel;"
+										oncommand="LeechBlock.setDefaultPage(1);"/>
+									<button id="lb-delaying-page1"
+										label="&options.delayingPageLabel;"
+										oncommand="LeechBlock.setDelayingPage(1);"/>
+									<button id="lb-blank-page1"
+										label="&options.blankPageLabel;"
+										oncommand="LeechBlock.setBlankPage(1);"/>
+									<button id="lb-home-page1"
+										label="&options.homePageLabel;"
+										oncommand="LeechBlock.setHomePage(1);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<checkbox id="lb-active-block1"
+										label="&options.activeBlockLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-count-focus1"
+										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.delaySecsDesc1;</description>
+									<textbox id="lb-delay-secs1" size="2"/>
+									<description>&options.delaySecsDesc2;</description>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(1, 1);"/>
+									<spacer flex="1"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- Advanced (Set 1) -->
+						<tabpanel>
+							<vbox flex="1">
+								<hbox align="center">
+									<description class="header">&options.advancedWarnDesc1;</description>
+									<description>&options.advancedWarnDesc2;</description>
+								</hbox>
+								<groupbox>
+									<caption label="&options.accessControlLabel;"/>
+									<hbox align="center">
+										<checkbox id="lb-prev-opts1"
+											label="&options.prevOptsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-addons1"
+											label="&options.prevAddonsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-config1"
+											label="&options.prevConfigLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<groupbox>
+									<caption label="&options.lockdownLabel;"/>
+									<hbox align="center">
+										<button id="lb-cancel-lockdown1" label="&options.cancelLockdownLabel;"
+											oncommand="LeechBlock.cancelLockdown(1);" disabled="true"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<spacer flex="1"/>
+							</vbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+
+			<!-- Block Set 2 -->
+			<tabpanel>
+				<tabbox id="lb-tabbox-set2">
+					<tabs>
+						<tab id="lb-tab-set2a" label="&options.whatBlockTabLabel;"/>
+						<tab id="lb-tab-set2b" label="&options.whenBlockTabLabel;"/>
+						<tab id="lb-tab-set2c" label="&options.howBlockTabLabel;"/>
+						<tab id="lb-tab-set2d" label="&options.advancedTabLabel;"/>
+					</tabs>
+					<tabpanels>
+						<!-- What to Block (Set 2) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whatBlockDesc;</description>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.customSetName;</description>
+									<textbox id="lb-set-name2" flex="1"/>
+									<button id="lb-clear-set-name2"
+										label="&options.clearSetName;"
+										oncommand="LeechBlock.clearSetName(2);"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.sitesDesc;</description>
+								<textbox id="lb-sites2" multiline="true" flex="1"
+									rows="6" tooltiptext="&options.sitesTooltip;"/>
+								<hbox align="center">
+									<description>&options.sitesLoadFromURL;</description>
+									<textbox id="lb-sites-URL2" flex="1"
+										tooltiptext="&options.sitesURLTooltip;"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(2, 1);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- When to Block (Set 2) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whenBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.timesDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-times2" flex="1"
+										tooltiptext="&options.timesTooltip;"/>
+									<button id="lb-all-day2"
+										label="&options.allDayLabel;"
+										oncommand="LeechBlock.setAllDay(2);"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.timeLimitDesc;</description>
+									<textbox id="lb-limit-mins2" size="4"
+										tooltiptext="&options.timeLimitTooltip;"/>
+									<description>&options.minsInEveryDesc;</description>
+									<menulist id="lb-limit-period2">
+										<menupopup>
+											<menuitem label="&#160;" value=""/>
+											<menuitem label="&options.quarterHourMenuItem;"
+												value="900"/>
+											<menuitem label="&options.halfHourMenuItem;"
+												value="1800"/>
+											<menuitem label="&options.hourMenuItem;"
+												value="3600"/>
+											<menuitem label="&options.twoHoursMenuItem;"
+												value="7200"/>
+											<menuitem label="&options.threeHoursMenuItem;"
+												value="10800"/>
+											<menuitem label="&options.fourHoursMenuItem;"
+												value="14400"/>
+											<menuitem label="&options.sixHoursMenuItem;"
+												value="21600"/>
+											<menuitem label="&options.halfDayMenuItem;"
+												value="43200"/>
+											<menuitem label="&options.dayMenuItem;"
+												value="86400"/>
+											<menuitem label="&options.twoDaysMenuItem;"
+												value="172800"/>
+											<menuitem label="&options.weekMenuItem;"
+												value="604800"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.modeDesc;</description>
+									<menulist id="lb-mode2">
+										<menupopup>
+											<menuitem label="&options.modeOrLabel;"/>
+											<menuitem label="&options.modeAndLabel;"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.daysDesc;</description>
+								<hbox align="center">
+									<checkbox id="lb-day02" label="&options.dayLabel0;"/>
+									<checkbox id="lb-day12" label="&options.dayLabel1;"/>
+									<checkbox id="lb-day22" label="&options.dayLabel2;"/>
+									<checkbox id="lb-day32" label="&options.dayLabel3;"/>
+									<checkbox id="lb-day42" label="&options.dayLabel4;"/>
+									<checkbox id="lb-day52" label="&options.dayLabel5;"/>
+									<checkbox id="lb-day62" label="&options.dayLabel6;"/>
+									<button id="lb-every-day2"
+										label="&options.everyDayLabel;"
+										oncommand="LeechBlock.setEveryDay(2);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(2, 0);"/>
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(2, 2);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- How to Block (Set 2) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.howBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.blockDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-block-page2" flex="1"
+										tooltiptext="&options.blockTooltip;"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.predefinedURLs;</description>
+									<button id="lb-default-page2"
+										label="&options.defaultPageLabel;"
+										oncommand="LeechBlock.setDefaultPage(2);"/>
+									<button id="lb-delaying-page2"
+										label="&options.delayingPageLabel;"
+										oncommand="LeechBlock.setDelayingPage(2);"/>
+									<button id="lb-blank-page2"
+										label="&options.blankPageLabel;"
+										oncommand="LeechBlock.setBlankPage(2);"/>
+									<button id="lb-home-page2"
+										label="&options.homePageLabel;"
+										oncommand="LeechBlock.setHomePage(2);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<checkbox id="lb-active-block2"
+										label="&options.activeBlockLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-count-focus2"
+										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.delaySecsDesc1;</description>
+									<textbox id="lb-delay-secs2" size="2"/>
+									<description>&options.delaySecsDesc2;</description>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(2, 1);"/>
+									<spacer flex="1"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- Advanced (Set 2) -->
+						<tabpanel>
+							<vbox flex="1">
+								<hbox align="center">
+									<description class="header">&options.advancedWarnDesc1;</description>
+									<description>&options.advancedWarnDesc2;</description>
+								</hbox>
+								<groupbox>
+									<caption label="&options.accessControlLabel;"/>
+									<hbox align="center">
+										<checkbox id="lb-prev-opts2"
+											label="&options.prevOptsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-addons2"
+											label="&options.prevAddonsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-config2"
+											label="&options.prevConfigLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<groupbox>
+									<caption label="&options.lockdownLabel;"/>
+									<hbox align="center">
+										<button id="lb-cancel-lockdown2" label="&options.cancelLockdownLabel;"
+											oncommand="LeechBlock.cancelLockdown(2);" disabled="true"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<spacer flex="1"/>
+							</vbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+
+			<!-- Block Set 3 -->
+			<tabpanel>
+				<tabbox id="lb-tabbox-set3">
+					<tabs>
+						<tab id="lb-tab-set3a" label="&options.whatBlockTabLabel;"/>
+						<tab id="lb-tab-set3b" label="&options.whenBlockTabLabel;"/>
+						<tab id="lb-tab-set3c" label="&options.howBlockTabLabel;"/>
+						<tab id="lb-tab-set3d" label="&options.advancedTabLabel;"/>
+					</tabs>
+					<tabpanels>
+						<!-- What to Block (Set 3) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whatBlockDesc;</description>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.customSetName;</description>
+									<textbox id="lb-set-name3" flex="1"/>
+									<button id="lb-clear-set-name3"
+										label="&options.clearSetName;"
+										oncommand="LeechBlock.clearSetName(3);"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.sitesDesc;</description>
+								<textbox id="lb-sites3" multiline="true" flex="1"
+									rows="6" tooltiptext="&options.sitesTooltip;"/>
+								<hbox align="center">
+									<description>&options.sitesLoadFromURL;</description>
+									<textbox id="lb-sites-URL3" flex="1"
+										tooltiptext="&options.sitesURLTooltip;"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(3, 1);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- When to Block (Set 3) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whenBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.timesDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-times3" flex="1"
+										tooltiptext="&options.timesTooltip;"/>
+									<button id="lb-all-day3"
+										label="&options.allDayLabel;"
+										oncommand="LeechBlock.setAllDay(3);"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.timeLimitDesc;</description>
+									<textbox id="lb-limit-mins3" size="4"
+										tooltiptext="&options.timeLimitTooltip;"/>
+									<description>&options.minsInEveryDesc;</description>
+									<menulist id="lb-limit-period3">
+										<menupopup>
+											<menuitem label="&#160;" value=""/>
+											<menuitem label="&options.quarterHourMenuItem;"
+												value="900"/>
+											<menuitem label="&options.halfHourMenuItem;"
+												value="1800"/>
+											<menuitem label="&options.hourMenuItem;"
+												value="3600"/>
+											<menuitem label="&options.twoHoursMenuItem;"
+												value="7200"/>
+											<menuitem label="&options.threeHoursMenuItem;"
+												value="10800"/>
+											<menuitem label="&options.fourHoursMenuItem;"
+												value="14400"/>
+											<menuitem label="&options.sixHoursMenuItem;"
+												value="21600"/>
+											<menuitem label="&options.halfDayMenuItem;"
+												value="43200"/>
+											<menuitem label="&options.dayMenuItem;"
+												value="86400"/>
+											<menuitem label="&options.twoDaysMenuItem;"
+												value="172800"/>
+											<menuitem label="&options.weekMenuItem;"
+												value="604800"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.modeDesc;</description>
+									<menulist id="lb-mode3">
+										<menupopup>
+											<menuitem label="&options.modeOrLabel;"/>
+											<menuitem label="&options.modeAndLabel;"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.daysDesc;</description>
+								<hbox align="center">
+									<checkbox id="lb-day03" label="&options.dayLabel0;"/>
+									<checkbox id="lb-day13" label="&options.dayLabel1;"/>
+									<checkbox id="lb-day23" label="&options.dayLabel2;"/>
+									<checkbox id="lb-day33" label="&options.dayLabel3;"/>
+									<checkbox id="lb-day43" label="&options.dayLabel4;"/>
+									<checkbox id="lb-day53" label="&options.dayLabel5;"/>
+									<checkbox id="lb-day63" label="&options.dayLabel6;"/>
+									<button id="lb-every-day3"
+										label="&options.everyDayLabel;"
+										oncommand="LeechBlock.setEveryDay(3);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(3, 0);"/>
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(3, 2);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- How to Block (Set 3) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.howBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.blockDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-block-page3" flex="1"
+										tooltiptext="&options.blockTooltip;"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.predefinedURLs;</description>
+									<button id="lb-default-page3"
+										label="&options.defaultPageLabel;"
+										oncommand="LeechBlock.setDefaultPage(3);"/>
+									<button id="lb-delaying-page3"
+										label="&options.delayingPageLabel;"
+										oncommand="LeechBlock.setDelayingPage(3);"/>
+									<button id="lb-blank-page3"
+										label="&options.blankPageLabel;"
+										oncommand="LeechBlock.setBlankPage(3);"/>
+									<button id="lb-home-page3"
+										label="&options.homePageLabel;"
+										oncommand="LeechBlock.setHomePage(3);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<checkbox id="lb-active-block3"
+										label="&options.activeBlockLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-count-focus3"
+										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.delaySecsDesc1;</description>
+									<textbox id="lb-delay-secs3" size="2"/>
+									<description>&options.delaySecsDesc2;</description>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(3, 1);"/>
+									<spacer flex="1"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- Advanced (Set 3) -->
+						<tabpanel>
+							<vbox flex="1">
+								<hbox align="center">
+									<description class="header">&options.advancedWarnDesc1;</description>
+									<description>&options.advancedWarnDesc2;</description>
+								</hbox>
+								<groupbox>
+									<caption label="&options.accessControlLabel;"/>
+									<hbox align="center">
+										<checkbox id="lb-prev-opts3"
+											label="&options.prevOptsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-addons3"
+											label="&options.prevAddonsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-config3"
+											label="&options.prevConfigLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<groupbox>
+									<caption label="&options.lockdownLabel;"/>
+									<hbox align="center">
+										<button id="lb-cancel-lockdown3" label="&options.cancelLockdownLabel;"
+											oncommand="LeechBlock.cancelLockdown(3);" disabled="true"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<spacer flex="1"/>
+							</vbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+
+			<!-- Block Set 4 -->
+			<tabpanel>
+				<tabbox id="lb-tabbox-set4">
+					<tabs>
+						<tab id="lb-tab-set4a" label="&options.whatBlockTabLabel;"/>
+						<tab id="lb-tab-set4b" label="&options.whenBlockTabLabel;"/>
+						<tab id="lb-tab-set4c" label="&options.howBlockTabLabel;"/>
+						<tab id="lb-tab-set4d" label="&options.advancedTabLabel;"/>
+					</tabs>
+					<tabpanels>
+						<!-- What to Block (Set 4) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whatBlockDesc;</description>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.customSetName;</description>
+									<textbox id="lb-set-name4" flex="1"/>
+									<button id="lb-clear-set-name4"
+										label="&options.clearSetName;"
+										oncommand="LeechBlock.clearSetName(4);"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.sitesDesc;</description>
+								<textbox id="lb-sites4" multiline="true" flex="1"
+									rows="6" tooltiptext="&options.sitesTooltip;"/>
+								<hbox align="center">
+									<description>&options.sitesLoadFromURL;</description>
+									<textbox id="lb-sites-URL4" flex="1"
+										tooltiptext="&options.sitesURLTooltip;"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(4, 1);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- When to Block (Set 4) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whenBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.timesDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-times4" flex="1"
+										tooltiptext="&options.timesTooltip;"/>
+									<button id="lb-all-day4"
+										label="&options.allDayLabel;"
+										oncommand="LeechBlock.setAllDay(4);"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.timeLimitDesc;</description>
+									<textbox id="lb-limit-mins4" size="4"
+										tooltiptext="&options.timeLimitTooltip;"/>
+									<description>&options.minsInEveryDesc;</description>
+									<menulist id="lb-limit-period4">
+										<menupopup>
+											<menuitem label="&#160;" value=""/>
+											<menuitem label="&options.quarterHourMenuItem;"
+												value="900"/>
+											<menuitem label="&options.halfHourMenuItem;"
+												value="1800"/>
+											<menuitem label="&options.hourMenuItem;"
+												value="3600"/>
+											<menuitem label="&options.twoHoursMenuItem;"
+												value="7200"/>
+											<menuitem label="&options.threeHoursMenuItem;"
+												value="10800"/>
+											<menuitem label="&options.fourHoursMenuItem;"
+												value="14400"/>
+											<menuitem label="&options.sixHoursMenuItem;"
+												value="21600"/>
+											<menuitem label="&options.halfDayMenuItem;"
+												value="43200"/>
+											<menuitem label="&options.dayMenuItem;"
+												value="86400"/>
+											<menuitem label="&options.twoDaysMenuItem;"
+												value="172800"/>
+											<menuitem label="&options.weekMenuItem;"
+												value="604800"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.modeDesc;</description>
+									<menulist id="lb-mode4">
+										<menupopup>
+											<menuitem label="&options.modeOrLabel;"/>
+											<menuitem label="&options.modeAndLabel;"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.daysDesc;</description>
+								<hbox align="center">
+									<checkbox id="lb-day04" label="&options.dayLabel0;"/>
+									<checkbox id="lb-day14" label="&options.dayLabel1;"/>
+									<checkbox id="lb-day24" label="&options.dayLabel2;"/>
+									<checkbox id="lb-day34" label="&options.dayLabel3;"/>
+									<checkbox id="lb-day44" label="&options.dayLabel4;"/>
+									<checkbox id="lb-day54" label="&options.dayLabel5;"/>
+									<checkbox id="lb-day64" label="&options.dayLabel6;"/>
+									<button id="lb-every-day4"
+										label="&options.everyDayLabel;"
+										oncommand="LeechBlock.setEveryDay(4);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(4, 0);"/>
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(4, 2);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- How to Block (Set 4) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.howBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.blockDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-block-page4" flex="1"
+										tooltiptext="&options.blockTooltip;"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.predefinedURLs;</description>
+									<button id="lb-default-page4"
+										label="&options.defaultPageLabel;"
+										oncommand="LeechBlock.setDefaultPage(4);"/>
+									<button id="lb-delaying-page4"
+										label="&options.delayingPageLabel;"
+										oncommand="LeechBlock.setDelayingPage(4);"/>
+									<button id="lb-blank-page4"
+										label="&options.blankPageLabel;"
+										oncommand="LeechBlock.setBlankPage(4);"/>
+									<button id="lb-home-page4"
+										label="&options.homePageLabel;"
+										oncommand="LeechBlock.setHomePage(4);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<checkbox id="lb-active-block4"
+										label="&options.activeBlockLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-count-focus4"
+										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.delaySecsDesc1;</description>
+									<textbox id="lb-delay-secs4" size="2"/>
+									<description>&options.delaySecsDesc2;</description>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(4, 1);"/>
+									<spacer flex="1"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- Advanced (Set 4) -->
+						<tabpanel>
+							<vbox flex="1">
+								<hbox align="center">
+									<description class="header">&options.advancedWarnDesc1;</description>
+									<description>&options.advancedWarnDesc2;</description>
+								</hbox>
+								<groupbox>
+									<caption label="&options.accessControlLabel;"/>
+									<hbox align="center">
+										<checkbox id="lb-prev-opts4"
+											label="&options.prevOptsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-addons4"
+											label="&options.prevAddonsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-config4"
+											label="&options.prevConfigLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<groupbox>
+									<caption label="&options.lockdownLabel;"/>
+									<hbox align="center">
+										<button id="lb-cancel-lockdown4" label="&options.cancelLockdownLabel;"
+											oncommand="LeechBlock.cancelLockdown(4);" disabled="true"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<spacer flex="1"/>
+							</vbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+
+			<!-- Block Set 5 -->
+			<tabpanel>
+				<tabbox id="lb-tabbox-set5">
+					<tabs>
+						<tab id="lb-tab-set5a" label="&options.whatBlockTabLabel;"/>
+						<tab id="lb-tab-set5b" label="&options.whenBlockTabLabel;"/>
+						<tab id="lb-tab-set5c" label="&options.howBlockTabLabel;"/>
+						<tab id="lb-tab-set5d" label="&options.advancedTabLabel;"/>
+					</tabs>
+					<tabpanels>
+						<!-- What to Block (Set 5) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whatBlockDesc;</description>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.customSetName;</description>
+									<textbox id="lb-set-name5" flex="1"/>
+									<button id="lb-clear-set-name5"
+										label="&options.clearSetName;"
+										oncommand="LeechBlock.clearSetName(5);"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.sitesDesc;</description>
+								<textbox id="lb-sites5" multiline="true" flex="1"
+									rows="6" tooltiptext="&options.sitesTooltip;"/>
+								<hbox align="center">
+									<description>&options.sitesLoadFromURL;</description>
+									<textbox id="lb-sites-URL5" flex="1"
+										tooltiptext="&options.sitesURLTooltip;"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(5, 1);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- When to Block (Set 5) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whenBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.timesDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-times5" flex="1"
+										tooltiptext="&options.timesTooltip;"/>
+									<button id="lb-all-day5"
+										label="&options.allDayLabel;"
+										oncommand="LeechBlock.setAllDay(5);"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.timeLimitDesc;</description>
+									<textbox id="lb-limit-mins5" size="4"
+										tooltiptext="&options.timeLimitTooltip;"/>
+									<description>&options.minsInEveryDesc;</description>
+									<menulist id="lb-limit-period5">
+										<menupopup>
+											<menuitem label="&#160;" value=""/>
+											<menuitem label="&options.quarterHourMenuItem;"
+												value="900"/>
+											<menuitem label="&options.halfHourMenuItem;"
+												value="1800"/>
+											<menuitem label="&options.hourMenuItem;"
+												value="3600"/>
+											<menuitem label="&options.twoHoursMenuItem;"
+												value="7200"/>
+											<menuitem label="&options.threeHoursMenuItem;"
+												value="10800"/>
+											<menuitem label="&options.fourHoursMenuItem;"
+												value="14400"/>
+											<menuitem label="&options.sixHoursMenuItem;"
+												value="21600"/>
+											<menuitem label="&options.halfDayMenuItem;"
+												value="43200"/>
+											<menuitem label="&options.dayMenuItem;"
+												value="86400"/>
+											<menuitem label="&options.twoDaysMenuItem;"
+												value="172800"/>
+											<menuitem label="&options.weekMenuItem;"
+												value="604800"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.modeDesc;</description>
+									<menulist id="lb-mode5">
+										<menupopup>
+											<menuitem label="&options.modeOrLabel;"/>
+											<menuitem label="&options.modeAndLabel;"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.daysDesc;</description>
+								<hbox align="center">
+									<checkbox id="lb-day05" label="&options.dayLabel0;"/>
+									<checkbox id="lb-day15" label="&options.dayLabel1;"/>
+									<checkbox id="lb-day25" label="&options.dayLabel2;"/>
+									<checkbox id="lb-day35" label="&options.dayLabel3;"/>
+									<checkbox id="lb-day45" label="&options.dayLabel4;"/>
+									<checkbox id="lb-day55" label="&options.dayLabel5;"/>
+									<checkbox id="lb-day65" label="&options.dayLabel6;"/>
+									<button id="lb-every-day5"
+										label="&options.everyDayLabel;"
+										oncommand="LeechBlock.setEveryDay(5);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(5, 0);"/>
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(5, 2);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- How to Block (Set 5) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.howBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.blockDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-block-page5" flex="1"
+										tooltiptext="&options.blockTooltip;"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.predefinedURLs;</description>
+									<button id="lb-default-page5"
+										label="&options.defaultPageLabel;"
+										oncommand="LeechBlock.setDefaultPage(5);"/>
+									<button id="lb-delaying-page5"
+										label="&options.delayingPageLabel;"
+										oncommand="LeechBlock.setDelayingPage(5);"/>
+									<button id="lb-blank-page5"
+										label="&options.blankPageLabel;"
+										oncommand="LeechBlock.setBlankPage(5);"/>
+									<button id="lb-home-page5"
+										label="&options.homePageLabel;"
+										oncommand="LeechBlock.setHomePage(5);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<checkbox id="lb-active-block5"
+										label="&options.activeBlockLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-count-focus5"
+										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.delaySecsDesc1;</description>
+									<textbox id="lb-delay-secs5" size="2"/>
+									<description>&options.delaySecsDesc2;</description>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(5, 1);"/>
+									<spacer flex="1"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- Advanced (Set 5) -->
+						<tabpanel>
+							<vbox flex="1">
+								<hbox align="center">
+									<description class="header">&options.advancedWarnDesc1;</description>
+									<description>&options.advancedWarnDesc2;</description>
+								</hbox>
+								<groupbox>
+									<caption label="&options.accessControlLabel;"/>
+									<hbox align="center">
+										<checkbox id="lb-prev-opts5"
+											label="&options.prevOptsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-addons5"
+											label="&options.prevAddonsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-config5"
+											label="&options.prevConfigLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<groupbox>
+									<caption label="&options.lockdownLabel;"/>
+									<hbox align="center">
+										<button id="lb-cancel-lockdown5" label="&options.cancelLockdownLabel;"
+											oncommand="LeechBlock.cancelLockdown(5);" disabled="true"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<spacer flex="1"/>
+							</vbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+
+			<!-- Block Set 6 -->
+			<tabpanel>
+				<tabbox id="lb-tabbox-set6">
+					<tabs>
+						<tab id="lb-tab-set6a" label="&options.whatBlockTabLabel;"/>
+						<tab id="lb-tab-set6b" label="&options.whenBlockTabLabel;"/>
+						<tab id="lb-tab-set6c" label="&options.howBlockTabLabel;"/>
+						<tab id="lb-tab-set6d" label="&options.advancedTabLabel;"/>
+					</tabs>
+					<tabpanels>
+						<!-- What to Block (Set 6) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whatBlockDesc;</description>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.customSetName;</description>
+									<textbox id="lb-set-name6" flex="1"/>
+									<button id="lb-clear-set-name6"
+										label="&options.clearSetName;"
+										oncommand="LeechBlock.clearSetName(6);"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.sitesDesc;</description>
+								<textbox id="lb-sites6" multiline="true" flex="1"
+									rows="6" tooltiptext="&options.sitesTooltip;"/>
+								<hbox align="center">
+									<description>&options.sitesLoadFromURL;</description>
+									<textbox id="lb-sites-URL6" flex="1"
+										tooltiptext="&options.sitesURLTooltip;"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(6, 1);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- When to Block (Set 6) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.whenBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.timesDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-times6" flex="1"
+										tooltiptext="&options.timesTooltip;"/>
+									<button id="lb-all-day6"
+										label="&options.allDayLabel;"
+										oncommand="LeechBlock.setAllDay(6);"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.timeLimitDesc;</description>
+									<textbox id="lb-limit-mins6" size="4"
+										tooltiptext="&options.timeLimitTooltip;"/>
+									<description>&options.minsInEveryDesc;</description>
+									<menulist id="lb-limit-period6">
+										<menupopup>
+											<menuitem label="&#160;" value=""/>
+											<menuitem label="&options.quarterHourMenuItem;"
+												value="900"/>
+											<menuitem label="&options.halfHourMenuItem;"
+												value="1800"/>
+											<menuitem label="&options.hourMenuItem;"
+												value="3600"/>
+											<menuitem label="&options.twoHoursMenuItem;"
+												value="7200"/>
+											<menuitem label="&options.threeHoursMenuItem;"
+												value="10800"/>
+											<menuitem label="&options.fourHoursMenuItem;"
+												value="14400"/>
+											<menuitem label="&options.sixHoursMenuItem;"
+												value="21600"/>
+											<menuitem label="&options.halfDayMenuItem;"
+												value="43200"/>
+											<menuitem label="&options.dayMenuItem;"
+												value="86400"/>
+											<menuitem label="&options.twoDaysMenuItem;"
+												value="172800"/>
+											<menuitem label="&options.weekMenuItem;"
+												value="604800"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<description>&options.modeDesc;</description>
+									<menulist id="lb-mode6">
+										<menupopup>
+											<menuitem label="&options.modeOrLabel;"/>
+											<menuitem label="&options.modeAndLabel;"/>
+										</menupopup>
+									</menulist>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<description>&options.daysDesc;</description>
+								<hbox align="center">
+									<checkbox id="lb-day06" label="&options.dayLabel0;"/>
+									<checkbox id="lb-day16" label="&options.dayLabel1;"/>
+									<checkbox id="lb-day26" label="&options.dayLabel2;"/>
+									<checkbox id="lb-day36" label="&options.dayLabel3;"/>
+									<checkbox id="lb-day46" label="&options.dayLabel4;"/>
+									<checkbox id="lb-day56" label="&options.dayLabel5;"/>
+									<checkbox id="lb-day66" label="&options.dayLabel6;"/>
+									<button id="lb-every-day6"
+										label="&options.everyDayLabel;"
+										oncommand="LeechBlock.setEveryDay(6);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(6, 0);"/>
+									<spacer flex="1"/>
+									<button label="&options.nextLabel;"
+										oncommand="LeechBlock.setInnerTab(6, 2);"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- How to Block (Set 6) -->
+						<tabpanel>
+							<vbox flex="1">
+								<description class="header">&options.howBlockDesc;</description>
+								<separator class="groove"/>
+								<description>&options.blockDesc;</description>
+								<hbox align="center">
+									<textbox id="lb-block-page6" flex="1"
+										tooltiptext="&options.blockTooltip;"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.predefinedURLs;</description>
+									<button id="lb-default-page6"
+										label="&options.defaultPageLabel;"
+										oncommand="LeechBlock.setDefaultPage(6);"/>
+									<button id="lb-delaying-page6"
+										label="&options.delayingPageLabel;"
+										oncommand="LeechBlock.setDelayingPage(6);"/>
+									<button id="lb-blank-page6"
+										label="&options.blankPageLabel;"
+										oncommand="LeechBlock.setBlankPage(6);"/>
+									<button id="lb-home-page6"
+										label="&options.homePageLabel;"
+										oncommand="LeechBlock.setHomePage(6);"/>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<hbox align="center">
+									<checkbox id="lb-active-block6"
+										label="&options.activeBlockLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-count-focus6"
+										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<description>&options.delaySecsDesc1;</description>
+									<textbox id="lb-delay-secs6" size="2"/>
+									<description>&options.delaySecsDesc2;</description>
+									<spacer flex="1"/>
+								</hbox>
+								<separator class="groove"/>
+								<spacer flex="1"/>
+								<hbox align="center">
+									<button label="&options.backLabel;"
+										oncommand="LeechBlock.setInnerTab(6, 1);"/>
+									<spacer flex="1"/>
+								</hbox>
+							</vbox>
+						</tabpanel>
+						<!-- Advanced (Set 6) -->
+						<tabpanel>
+							<vbox flex="1">
+								<hbox align="center">
+									<description class="header">&options.advancedWarnDesc1;</description>
+									<description>&options.advancedWarnDesc2;</description>
+								</hbox>
+								<groupbox>
+									<caption label="&options.accessControlLabel;"/>
+									<hbox align="center">
+										<checkbox id="lb-prev-opts6"
+											label="&options.prevOptsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-addons6"
+											label="&options.prevAddonsLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+									<hbox align="center">
+										<checkbox id="lb-prev-config6"
+											label="&options.prevConfigLabel;"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<groupbox>
+									<caption label="&options.lockdownLabel;"/>
+									<hbox align="center">
+										<button id="lb-cancel-lockdown6" label="&options.cancelLockdownLabel;"
+											oncommand="LeechBlock.cancelLockdown(6);" disabled="true"/>
+										<spacer flex="1"/>
+									</hbox>
+								</groupbox>
+								<spacer flex="1"/>
+							</vbox>
+						</tabpanel>
+					</tabpanels>
+				</tabbox>
+			</tabpanel>
+
+			<!-- Access Control -->
+			<tabpanel>
+				<vbox flex="1">
+					<groupbox>
+						<caption label="&options.optionsAccessLabel;"/>
+						<description>&options.accessDesc;</description>
+						<hbox align="center">
+							<menulist id="lb-options-access">
+								<menupopup onpopuphidden="LeechBlock.updatePasswordOptions();">
+									<menuitem label="&options.accessMenuItem0;"
+										value="0"/>
+									<menuitem label="&options.accessMenuItem1;"
+										value="1"/>
+									<menuitem label="&options.accessMenuItem2;"
+										value="2"/>
+									<menuitem label="&options.accessMenuItem3;"
+										value="3"/>
+									<menuitem label="&options.accessMenuItem4;"
+										value="4"/>
+								</menupopup>
+							</menulist>
+							<spacer flex="1"/>
+						</hbox>
+						<description>&options.passwordDesc;</description>
+						<hbox align="center">
+							<textbox id="lb-options-password" flex="1"/>
+							<button id="lb-clear-password" label="&options.clearPasswordLabel;"
+								oncommand="LeechBlock.clearPassword();"/>
+						</hbox>
+						<hbox align="center">
+							<checkbox id="lb-options-hpp" label="&options.hidePasswordLabel;"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+					<groupbox>
+						<caption label="&options.browserModsLabel;"/>
+						<hbox align="center">
+							<checkbox id="lb-options-ham" label="&options.hideExtension;"/>
+							<spacer flex="1"/>
+						</hbox>
+						<hbox align="center">
+							<checkbox id="lb-options-hsm" label="&options.hideSafeMode;"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+				</vbox>
+			</tabpanel>
+
+			<!-- General -->
+			<tabpanel>
+				<vbox flex="1">
+					<groupbox>
+						<caption label="&options.miscLabel;"/>
+						<hbox align="center">
+							<description>&options.warnMessageDesc1;</description>
+							<textbox id="lb-options-warn-secs" size="2"
+								tooltiptext="&options.warnMessageTooltip;"/>
+							<description>&options.warnMessageDesc2;</description>
+							<spacer flex="1"/>
+						</hbox>
+						<hbox align="center">
+							<checkbox id="lb-options-bep" label="&options.blockEmbeddedLabel;"/>
+							<spacer flex="1"/>
+						</hbox>
+						<hbox align="center">
+							<checkbox id="lb-options-kpb" label="&options.keepPageBackLabel;"/>
+							<spacer flex="1"/>
+						</hbox>
+						<hbox align="center">
+							<checkbox id="lb-options-hcm" label="&options.hideContMenuLabel;"/>
+							<spacer flex="1"/>
+						</hbox>
+						<hbox align="center">
+							<checkbox id="lb-options-htl" label="&options.hideTimeLeftLabel;"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+					<groupbox>
+						<caption label="&options.exportImportLabel;"/>
+						<hbox align="center">
+							<button id="lb-export-options" label="&options.exportOptionsLabel;"
+								oncommand="LeechBlock.exportOptions();"/>
+							<button id="lb-import-options" label="&options.importOptionsLabel;"
+								oncommand="LeechBlock.importOptions();"/>
+							<spacer flex="1"/>
+						</hbox>
+					</groupbox>
+					<spacer flex="1"/>
+				</vbox>
+			</tabpanel>
+
+		</tabpanels>
+
+	</tabbox>
+
+	<!-- Link Bar -->
+	<hbox align="center">
+		<spacer flex="1"/>
+		<label class="text-link" value="&options.openHomePage;"
+			href="http://www.proginosko.com/leechblock.html"
+			tooltiptext="http://www.proginosko.com/leechblock.html"/>
+		<label class="text-link" value="&options.openExamplesPage;"
+			href="http://www.proginosko.com/leechblock_examples.html"
+			tooltiptext="http://www.proginosko.com/leechblock_examples.html"/>
+		<label class="text-link" value="&options.openFAQPage;"
+			href="http://www.proginosko.com/leechblock_faq.html"
+			tooltiptext="http://www.proginosko.com/leechblock_faq.html"/>
+		<label class="text-link" value="&options.openVersionHistory;"
+			href="http://www.proginosko.com/leechblock_history.html"
+			tooltiptext="http://www.proginosko.com/leechblock_history.html"/>
+		<label class="text-link" value="&options.supportLeechBlock;"
+			href="https://addons.mozilla.org/en-US/firefox/addon/leechblock/"
+			tooltiptext="https://addons.mozilla.org/en-US/firefox/addon/leechblock/"/>
+		<spacer flex="1"/>
+	</hbox>
+
+</dialog>

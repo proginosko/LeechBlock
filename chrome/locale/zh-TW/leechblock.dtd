@@ -1,0 +1,157 @@
+<!ENTITY leechblock "LeechBlock">
+<!ENTITY blockSet "封鎖設定">
+
+<!-- Menu options -->
+<!ENTITY menu.lockdown "鎖定…">
+<!ENTITY menu.options "選項…">
+<!ENTITY menu.stats "統計…">
+<!ENTITY menu.addThisSiteLabel "新增 $S 到 $B">
+
+<!-- Toolbar widgets -->
+<!ENTITY toolbar.timeLeft "LeechBlock 剩餘時間">
+<!ENTITY tooltip.timeLeft "顯示此網站被封鎖的剩餘時間">
+
+<!-- Warning dialog -->
+<!ENTITY warning.title "LeechBlock 警告">
+<!ENTITY warning.alertBlock "$B 中的網站將在 $S 秒後被封鎖。">
+
+<!-- Options dialog -->
+<!ENTITY options.passwordPrompt "輸入密碼來存取選項：">
+<!ENTITY options.accessCodePrompt "輸入下面的代碼來存取選項：">
+<!ENTITY options.title "LeechBlock 選項">
+<!ENTITY options.accessTabLabel "存取控制">
+<!ENTITY options.generalTabLabel "一般設定">
+<!ENTITY options.whatBlockTabLabel "封鎖內容">
+<!ENTITY options.whenBlockTabLabel "封鎖時間">
+<!ENTITY options.howBlockTabLabel "封鎖方式">
+<!ENTITY options.advancedTabLabel "進階">
+<!ENTITY options.backLabel "&lt; 返回">
+<!ENTITY options.nextLabel "繼續 &gt;">
+<!ENTITY options.whatBlockDesc "第一步：設定你要封鎖的網站。">
+<!ENTITY options.customSetName "自定設定名稱(非必要)：">
+<!ENTITY options.clearSetName "清除自定名稱">
+<!ENTITY options.sitesDesc "輸入要封鎖的網站的域名(每行一個)：">
+<!ENTITY options.sitesTooltip "使用 * 作爲萬用符號，使用 + 作爲例外的前綴">
+<!ENTITY options.sitesLoadFromURL "從 URL 載入網站列表(非必要)：">
+<!ENTITY options.sitesURLTooltip "使用 $S 來傳遞封鎖設定號，使用 $T 來傳遞 UTC 毫秒時間戳">
+<!ENTITY options.whenBlockDesc "第二步：設定你要封鎖這些網站的時間。">
+<!ENTITY options.timesDesc "輸入要封鎖這些網站的時段(例如 0900-1230、1330-1700)：">
+<!ENTITY options.timesTooltip "如果沒有時段請留空">
+<!ENTITY options.allDayLabel "全天">
+<!ENTITY options.alertBadTimes "請以當前格式輸入時段。請使用 24 小時格式輸入時間，在開始時間和結束時間之間用破折號(-)連接，用逗號(,)或者空格來分隔時段。">
+<!ENTITY options.confPrevOptsAllDay "你確定要全天封鎖存取選項嗎？">
+<!ENTITY options.timeLimitDesc "輸入封鎖這些網站的時間限制：">
+<!ENTITY options.timeLimitTooltip "如果沒有時間限制請留空">
+<!ENTITY options.minsInEveryDesc "分鐘數每個">
+<!ENTITY options.quarterHourMenuItem "一刻鐘 (15 分鐘)">
+<!ENTITY options.halfHourMenuItem "半小時 (30 分鐘)">
+<!ENTITY options.hourMenuItem "1 小時">
+<!ENTITY options.twoHoursMenuItem "2 小時">
+<!ENTITY options.threeHoursMenuItem "3 小時">
+<!ENTITY options.fourHoursMenuItem "4 小時">
+<!ENTITY options.sixHoursMenuItem "6 小時">
+<!ENTITY options.halfDayMenuItem "半天 (12 小時)">
+<!ENTITY options.dayMenuItem "1 天 (24 小時)">
+<!ENTITY options.twoDaysMenuItem "2 天 (48 小時)">
+<!ENTITY options.weekMenuItem "一週 (7 天)">
+<!ENTITY options.alertBadTimeLimit "請以正確格式輸入時間顯示(正整數)。">
+<!ENTITY options.modeDesc "選擇封鎖這些網站的時間：">
+<!ENTITY options.modeOrLabel "在設定的時段內或者存取時間超過時間限制後">
+<!ENTITY options.modeAndLabel "在設定的時段內並且存取時間超過時間限制後">
+<!ENTITY options.daysDesc "選擇要在哪天封鎖這些網站：">
+<!ENTITY options.dayLabel0 "星期日">
+<!ENTITY options.dayLabel1 "星期一">
+<!ENTITY options.dayLabel2 "星期二">
+<!ENTITY options.dayLabel3 "星期三">
+<!ENTITY options.dayLabel4 "星期四">
+<!ENTITY options.dayLabel5 "星期五">
+<!ENTITY options.dayLabel6 "星期六">
+<!ENTITY options.everyDayLabel "每天">
+<!ENTITY options.howBlockDesc "第三步：設定如何封鎖這些網站。">
+<!ENTITY options.blockDesc "輸入滿足指定條件的 URL 的網頁來替代顯示這些封鎖的網站：">
+<!ENTITY options.blockTooltip "使用 $U 來傳遞封鎖頁面的 URL">
+<!ENTITY options.predefinedURLs "預定義的 URL：">
+<!ENTITY options.defaultPageLabel "預設頁面">
+<!ENTITY options.delayingPageLabel "延遲頁面">
+<!ENTITY options.blankPageLabel "空頁面">
+<!ENTITY options.homePageLabel "主頁">
+<!ENTITY options.activeBlockLabel "在時間段或者超過時間限制主動封鎖這些網站">
+<!ENTITY options.countFocusLabel "僅於使用該網頁時計算在消耗時間">
+<!ENTITY options.delaySecsDesc1 "延遲存取網站的時間">
+<!ENTITY options.delaySecsDesc2 "使用延遲頁面的秒數">
+<!ENTITY options.advancedWarnDesc1 "警告！">
+<!ENTITY options.advancedWarnDesc2 "請在確認理解這些選項可能導致的後果之後在使用。">
+<!ENTITY options.accessControlLabel "存取控制">
+<!ENTITY options.prevOptsLabel "當網站被封鎖時，禁止存取此封鎖設定">
+<!ENTITY options.prevAddonsLabel "當網站被封鎖時，禁止存取 about:addons">
+<!ENTITY options.prevConfigLabel "當網站被封鎖時，禁止存取 about:config">
+<!ENTITY options.lockdownLabel "鎖定">
+<!ENTITY options.cancelLockdownLabel "取消當前活動的鎖定">
+<!ENTITY options.confCancelLockdown "你確定要爲此封鎖設定取消當前活動的鎖定？">
+<!ENTITY options.optionsAccessLabel "選項存取">
+<!ENTITY options.accessDesc "選擇存取選項需要的條件：">
+<!ENTITY options.accessMenuItem0 "不要求用戶輸入密碼或者密碼">
+<!ENTITY options.accessMenuItem1 "要求用戶輸入密碼">
+<!ENTITY options.accessMenuItem2 "要求用戶輸入隨機的 32 字符的密碼">
+<!ENTITY options.accessMenuItem3 "要求用戶輸入隨機的 64 字符的密碼">
+<!ENTITY options.accessMenuItem4 "要求用戶輸入隨機的 128 字符的密碼">
+<!ENTITY options.passwordDesc "存取選項時輸入密碼：">
+<!ENTITY options.clearPasswordLabel "清除密碼">
+<!ENTITY options.hidePasswordLabel "在提示輸入時隱藏密碼字符">
+<!ENTITY options.browserModsLabel "瀏覽器修改">
+<!ENTITY options.hideExtension "在附加元件管理員中隱藏 LeechBlock">
+<!ENTITY options.hideSafeMode "隱藏“停用”功能(需要重新啓動瀏覽器)">
+<!ENTITY options.miscLabel "雜項">
+<!ENTITY options.warnMessageDesc1 "顯示警告消息">
+<!ENTITY options.warnMessageDesc2 "網站將要被封鎖的秒數">
+<!ENTITY options.warnMessageTooltip "如果沒有警告消息請留空">
+<!ENTITY options.alertBadSeconds "請以正確的格式輸入秒數(需要是正數)。">
+<!ENTITY options.showTimeLeftLabel "在狀態欄中顯示網站被封鎖的剩餘時間">
+<!ENTITY options.blockEmbeddedLabel "封鎖嵌入頁">
+<!ENTITY options.keepPageBackLabel "在瀏覽器的歷史中保存被封鎖的頁面">
+<!ENTITY options.hideContMenuLabel "隱藏 LeechBlock 右鍵選單(重新啓動瀏覽器來套用此設定)">
+<!ENTITY options.hideTimeLeftLabel "不活動時隱藏“LeechBlock 剩餘時間”工具欄項">
+<!ENTITY options.exportImportLabel "匯入/匯出">
+<!ENTITY options.exportOptionsLabel "匯出">
+<!ENTITY options.importOptionsLabel "匯入">
+<!ENTITY options.openVersionHistory "版本歷史">
+<!ENTITY options.openHomePage "主頁">
+<!ENTITY options.openExamplesPage "實例">
+<!ENTITY options.openFAQPage "常見問題">
+<!ENTITY options.supportLeechBlock "支持 LeechBlock">
+
+<!-- Statistics dialog -->
+<!ENTITY stats.title "LeechBlock 統計數據">
+<!ENTITY stats.startTimeLabel "開始日期/時間">
+<!ENTITY stats.totalTimeLabel "總用時">
+<!ENTITY stats.perDayTimeLabel "每天用時">
+<!ENTITY stats.timeLeftLabel "限制時間剩餘">
+<!ENTITY stats.naLabel "N/A">
+<!ENTITY stats.restartAllLabel "重新開始所有">
+<!ENTITY stats.restartLabel "重新開始">
+
+<!-- Lockdown dialog -->
+<!ENTITY lockdown.title "LeechBlock 鎖定">
+<!ENTITY lockdown.enterDurationLabel "輸入鎖定的持續時間：">
+<!ENTITY lockdown.hoursLabel "小時">
+<!ENTITY lockdown.minutesLabel "分鐘">
+<!ENTITY lockdown.selectSitesLabel "選擇鎖定期間要封鎖的網站：">
+<!ENTITY lockdown.setSelectionLabel "在此封鎖集中設定的網站：">
+<!ENTITY lockdown.alertLockdown "目前正在鎖定狀態，將持續到：">
+
+<!-- Localization for internal HTML pages -->
+<!ENTITY	language					"zh-TW">
+<!ENTITY	siteBlocked					"網站已封鎖">
+<!ENTITY	pageAccessBlocked1			"">
+<!ENTITY	pageAccessBlocked2			" 已經暫時封鎖此網頁">
+<!ENTITY	pageAccessDelayed1			"">
+<!ENTITY	pageAccessDelayed2			" 已經暫時封鎖此網頁">
+<!ENTITY	youCanClickHere1			"你可以於時限後">
+<!ENTITY	youCanClickHere2			"點擊此處">
+<!ENTITY	youCanClickHere3			"訪問頁面。">
+<!ENTITY	pageWillBeLoaded1			"頁面將在 ">
+<!ENTITY	pageWillBeLoaded2			" 秒後載入。">
+<!ENTITY	considerSupport1			"如果 LeechBlock 幫助你提高了生活品質，請考慮透過">
+<!ENTITY	considerSupport2			"">
+<!ENTITY	considerSupport3			"進行捐助或者撰寫評論">
+<!ENTITY	considerSupport4			"，以支持它持續開發。">

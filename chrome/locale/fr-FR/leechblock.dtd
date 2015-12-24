@@ -1,0 +1,157 @@
+<!ENTITY	leechblock					"LeechBlock">
+<!ENTITY	blockSet					"Verrou">
+
+<!-- Menu options -->
+<!ENTITY	menu.lockdown				"Verrouillage…">
+<!ENTITY	menu.options				"Options…">
+<!ENTITY	menu.stats					"Statistiques…">
+<!ENTITY	menu.addThisSiteLabel		"Ajouter $S au $B">
+
+<!-- Toolbar widgets -->
+<!ENTITY	toolbar.timeLeft			"Décompte Leechblock">
+<!ENTITY	tooltip.timeLeft			"Affiche le temps restant avant blocage du site">
+
+<!-- Warning dialog -->
+<!ENTITY	warning.title				"Avertissement Leechblock">
+<!ENTITY	warning.alertBlock			"Les sites du $B seront bloqués dans $S secondes.">
+
+<!-- Options dialog -->
+<!ENTITY	options.passwordPrompt		"Saisissez le mot de passe pour accéder aux options :">
+<!ENTITY	options.accessCodePrompt	"Saisissez le code suivant pour accéder aux options :">
+<!ENTITY	options.title				"Options de Leechblock">
+<!ENTITY	options.accessTabLabel		"Contrôle d'accès">
+<!ENTITY	options.generalTabLabel		"Général">
+<!ENTITY	options.whatBlockTabLabel	"Quoi bloquer">
+<!ENTITY	options.whenBlockTabLabel	"Quand bloquer">
+<!ENTITY	options.howBlockTabLabel	"Comment bloquer">
+<!ENTITY	options.advancedTabLabel	"Avancé">
+<!ENTITY	options.backLabel			"&lt; Précédent">
+<!ENTITY	options.nextLabel			"Suivant &gt;">
+<!ENTITY	options.whatBlockDesc		"Étape 1 : Spécifiez les sites à bloquer.">
+<!ENTITY	options.customSetName		"Saisissez un nom pour ce verrou (facultatif) :">
+<!ENTITY	options.clearSetName		"Effacer le nom">
+<!ENTITY	options.sitesDesc			"Saisissez les noms de domaine des sites à bloquer (un par ligne) :">
+<!ENTITY	options.sitesTooltip		"Utilisez * comme joker et + devant les exceptions">
+<!ENTITY	options.sitesLoadFromURL	"Charger une liste de sites à partir d'une URL (facultatif) :">
+<!ENTITY	options.sitesURLTooltip		"Insérez $S et $T dans l'URL pour passer respectivement le numéro de verrou et l'horodatage UTC (en ms) comme paramètres">
+<!ENTITY	options.whenBlockDesc		"Étape 2 : Spécifiez quand bloquer les sites.">
+<!ENTITY	options.timesDesc			"Saisissez les périodes souhaitées de blocage (exemple : 0900-1230, 1330-1700) :">
+<!ENTITY	options.timesTooltip		"Laisser vide pour ne pas activer ce paramètre">
+<!ENTITY	options.allDayLabel			"Journée entière">
+<!ENTITY	options.alertBadTimes		"Veuillez saisir les périodes au bon format. Écrivez les heures au format HHMM, placez un tiret (-) entre les heures de début et de fin, et séparez deux périodes par une virgule (,) ou un espace.">
+<!ENTITY	options.confPrevOptsAllDay	"Souhaitez-vous vraiment empêcher l'accès aux options toute la journée ?">
+<!ENTITY	options.timeLimitDesc		"Saisissez une durée de visite autorisée avant blocage :">
+<!ENTITY	options.timeLimitTooltip	"Laisser vide pour ne pas activer ce paramètre&gt;">
+<!ENTITY	options.minsInEveryDesc		"minutes toutes les">
+<!ENTITY	options.quarterHourMenuItem	"15 minutes">
+<!ENTITY	options.halfHourMenuItem	"30 minutes">
+<!ENTITY	options.hourMenuItem		"heures">
+<!ENTITY	options.twoHoursMenuItem	"2 heures">
+<!ENTITY	options.threeHoursMenuItem	"3 heures">
+<!ENTITY	options.fourHoursMenuItem	"4 heures">
+<!ENTITY	options.sixHoursMenuItem	"6 heures">
+<!ENTITY	options.halfDayMenuItem		"12 heures">
+<!ENTITY	options.dayMenuItem			"24 heures">
+<!ENTITY	options.twoDaysMenuItem		"48 heures">
+<!ENTITY	options.weekMenuItem		"semaines (7 jours)">
+<!ENTITY	options.alertBadTimeLimit	"Veuillez saisir la durée au bon format(nombre entier positif).">
+<!ENTITY	options.modeDesc			"Sélectionnez les conditions d'activation du blocage :">
+<!ENTITY	options.modeOrLabel			"pendant les périodes OU après la durée définie">
+<!ENTITY	options.modeAndLabel		"pendant les périodes ET après la durée définies">
+<!ENTITY	options.daysDesc			"Sélectionnez les jours souhaités de blocage :">
+<!ENTITY	options.dayLabel0			"Dim">
+<!ENTITY	options.dayLabel1			"Lun">
+<!ENTITY	options.dayLabel2			"Mar">
+<!ENTITY	options.dayLabel3			"Mer">
+<!ENTITY	options.dayLabel4			"Jeu">
+<!ENTITY	options.dayLabel5			"Ven">
+<!ENTITY	options.dayLabel6			"Sam">
+<!ENTITY	options.everyDayLabel		"Tous les jours">
+<!ENTITY	options.howBlockDesc		"Étape 3 : Spécifiez comment bloquer les sites.">
+<!ENTITY	options.blockDesc			"Saisissez l'URL complète de la page à afficher à la place des sites bloqués :">
+<!ENTITY	options.blockTooltip		"Insérez $U dans l'URL indiquée pour passer l'URL d'une page bloquée en paramètre">
+<!ENTITY	options.predefinedURLs		"URL prédéfinies :">
+<!ENTITY	options.defaultPageLabel	"Page par défaut">
+<!ENTITY	options.delayingPageLabel	"Page de blocage momentané">
+<!ENTITY	options.blankPageLabel		"Page blanche">
+<!ENTITY	options.homePageLabel		"Page d'accueil">
+<!ENTITY	options.activeBlockLabel	"Bloquer les sites sans attendre leur réactualisation quand les conditions de blocage sont réunies">
+<!ENTITY	options.countFocusLabel		"Décompter le temps passé sur les sites seulement quand leur onglet est actif">
+<!ENTITY	options.delaySecsDesc1		"Retarder momentanément l'accès aux sites de">
+<!ENTITY	options.delaySecsDesc2		"secondes quand la page de blocage momentané est sélectionnée">
+<!ENTITY	options.advancedWarnDesc1	"Attention !">
+<!ENTITY	options.advancedWarnDesc2	"Assurez-vous de bien comprendre les conséquences de ces options avant de les activer.">
+<!ENTITY	options.accessControlLabel	"Contrôle d'accès">
+<!ENTITY	options.prevOptsLabel		"Empêcher l'accès aux options de ce verrou pendant le blocage">
+<!ENTITY	options.prevAddonsLabel		"Empêcher l'accès à about:addons pendant le blocage">
+<!ENTITY	options.prevConfigLabel		"Empêcher l'accès aux about:config et about:support pendant le blocage">
+<!ENTITY	options.lockdownLabel		"Verrouillage">
+<!ENTITY	options.cancelLockdownLabel	"Annuler le verrouillage en cours">
+<!ENTITY	options.confCancelLockdown	"Souhaitez-vous vraiment exclure ce verrou du verrouillage en cours ?">
+<!ENTITY	options.optionsAccessLabel	"Accès aux options">
+<!ENTITY	options.accessDesc			"Sélectionnez les conditions d'accès aux options :">
+<!ENTITY	options.accessMenuItem0		"Ne pas demander de mot de passe ou de code d'accès à l'utilisateur">
+<!ENTITY	options.accessMenuItem1		"Demander un mot de passe à l'utilisateur">
+<!ENTITY	options.accessMenuItem2		"Demander un code d'accès aléatoire de 32 caractères à l'utilisateur">
+<!ENTITY	options.accessMenuItem3		"Demander un code d'accès aléatoire de 64 caractères à l'utilisateur">
+<!ENTITY	options.accessMenuItem4		"Demander un code d'accès aléatoire de 128 caractères à l'utilisateur">
+<!ENTITY	options.passwordDesc		"Saisissez le mot de passe pour accéder aux options :">
+<!ENTITY	options.clearPasswordLabel	"Effacer le mot de passe">
+<!ENTITY	options.hidePasswordLabel	"Masquer le mot de passe pendant la frappe lors de sa demande">
+<!ENTITY	options.browserModsLabel	"Modifications du navigateur">
+<!ENTITY	options.hideExtension		"Masquer l'extension Leechblock dans le gestionnaire de modules complémentaires">
+<!ENTITY	options.hideSafeMode		"Masquer « Redémarrer avec les modules désactivés… » dans le menu (nécessite un redémarrage du navigateur)">
+<!ENTITY	options.miscLabel			"Divers">
+<!ENTITY	options.warnMessageDesc1	"Afficher un message d'avertissement">
+<!ENTITY	options.warnMessageDesc2	"secondes avant de bloquer un site">
+<!ENTITY	options.warnMessageTooltip	"Laisser vide pour ne pas activer ce paramètre">
+<!ENTITY	options.alertBadSeconds		"Veuillez entrer le nombre de secondes au bon format (nombre entier positif).">
+<!ENTITY	options.showTimeLeftLabel	"Afficher le temps restant avant blocage dans la barre d'état">
+<!ENTITY	options.blockEmbeddedLabel	"Bloquer les pages intégrées (exemple : iframes)">
+<!ENTITY	options.keepPageBackLabel	"Conserver les pages bloquées dans l'historique du navigateur">
+<!ENTITY	options.hideContMenuLabel	"Masquer le menu contextuel de Leechblock (nécessite un redémarrage du navigateur)">
+<!ENTITY	options.hideTimeLeftLabel	"Masquer le « décompte Leechblock » sur la barre d'outils quand il est inactif">
+<!ENTITY	options.exportImportLabel	"Export/Import">
+<!ENTITY	options.exportOptionsLabel	"Exporter…">
+<!ENTITY	options.importOptionsLabel	"Importer…">
+<!ENTITY	options.openVersionHistory	"Historique de version">
+<!ENTITY	options.openHomePage		"Page d'accueil">
+<!ENTITY	options.openExamplesPage	"Exemples">
+<!ENTITY	options.openFAQPage			"FAQ">
+<!ENTITY	options.supportLeechBlock	"Soutenir LeechBlock">
+
+<!-- Statistics dialog -->
+<!ENTITY	stats.title					"Statistiques de LeechBlock">
+<!ENTITY	stats.startTimeLabel		"Date de début">
+<!ENTITY	stats.totalTimeLabel		"Durée totale de visite">
+<!ENTITY	stats.perDayTimeLabel		"Durée de visite par jour">
+<!ENTITY	stats.timeLeftLabel			"Temps restant avant blocage">
+<!ENTITY	stats.naLabel				"N/A">
+<!ENTITY	stats.restartAllLabel		"Tout remettre à zéro">
+<!ENTITY	stats.restartLabel			"Remettre à zéro">
+
+<!-- Lockdown dialog -->
+<!ENTITY	lockdown.title				"Verrouillage Leechblock">
+<!ENTITY	lockdown.enterDurationLabel	"Entrez la durée du verrouillage :">
+<!ENTITY	lockdown.hoursLabel			"h">
+<!ENTITY	lockdown.minutesLabel		"min">
+<!ENTITY	lockdown.selectSitesLabel	"Sélectionnez les sites à bloquer pendant le verrouillage :">
+<!ENTITY	lockdown.setSelectionLabel	"Sites appartenant au">
+<!ENTITY	lockdown.alertLockdown		"Le verrouillage est actif. Il prendra fin le">
+
+<!-- Localization for internal HTML pages -->
+<!ENTITY	language					"fr">
+<!ENTITY	siteBlocked					"Site bloqué">
+<!ENTITY	pageAccessBlocked1			"La page à laquelle vous essayez d'accéder a été bloquée par ">
+<!ENTITY	pageAccessBlocked2			".">
+<!ENTITY	pageAccessDelayed1			"La page à laquelle vous essayez d'accéder a été momentanément bloquée par ">
+<!ENTITY	pageAccessDelayed2			".">
+<!ENTITY	youCanClickHere1			"Vous pouvez ">
+<!ENTITY	youCanClickHere2			"cliquer ici">
+<!ENTITY	youCanClickHere3			" pour accéder à la page à la fin du blocage.">
+<!ENTITY	pageWillBeLoaded1			"La page sera chargée dans ">
+<!ENTITY	pageWillBeLoaded2			" secondes.">
+<!ENTITY	considerSupport1			"Si vous trouvez LeechBlock utile, pensez à soutenir la poursuite de son">
+<!ENTITY	considerSupport2			"développement ">
+<!ENTITY	considerSupport3			"en donnant une petite contribution ou en écrivant une critique">
+<!ENTITY	considerSupport4			".">

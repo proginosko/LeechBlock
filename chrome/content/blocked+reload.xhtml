@@ -1,0 +1,37 @@
+<!DOCTYPE html [
+	<!ENTITY % xhtmlDTD PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	%xhtmlDTD;
+	<!ENTITY % leechblockDTD SYSTEM "chrome://leechblock/locale/leechblock.dtd">
+	%leechblockDTD;
+]>
+
+<html id="leechblockBlockingPage" xmlns="http://www.w3.org/1999/xhtml" xml:lang="&language;" lang="&language;">
+
+	<head>
+		<title>&siteBlocked;</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link rel="shortcut icon" href="chrome://leechblock/skin/leechblock16.ico" type="image/x-icon" />
+		<link rel="icon" href="chrome://leechblock/skin/leechblock16.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script type="text/javascript">
+			function leechblockClickLink() { document.getElementById('leechblockBlockedURLLink').click(); }
+		</script>
+	</head>
+
+	<body onload="setTimeout(leechblockClickLink, 30000);">
+
+		<h1>&siteBlocked;</h1>
+
+		<p><img src="chrome://leechblock/skin/leechblock64.png" alt="&leechblock;" title="&leechblock;" /></p>
+
+		<p>&pageAccessBlocked1;<a href="http://www.proginosko.com/leechblock/">&leechblock;</a>&pageAccessBlocked2;</p>
+
+		<p><strong><span id="leechblockBlockedURLSpan" /></strong> (<span id="leechblockBlockedSetSpan">&blockSet;</span>)</p>
+
+		<p>&youCanClickHere1;<a id="leechblockBlockedURLLink" target="_self">&youCanClickHere2;</a>&youCanClickHere3;</p>
+
+		<p class="support">&considerSupport1;<br/>&considerSupport2;<a href="https://addons.mozilla.org/en-US/firefox/addon/leechblock/">&considerSupport3;</a>&considerSupport4;</p>
+
+	</body>
+
+</html>

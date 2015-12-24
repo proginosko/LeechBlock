@@ -1,0 +1,157 @@
+<!ENTITY leechblock "LeechBlock">
+<!ENTITY blockSet "阻止设置">
+
+<!-- Menu options -->
+<!ENTITY menu.lockdown "锁定…">
+<!ENTITY menu.options "选项…">
+<!ENTITY menu.stats "统计…">
+<!ENTITY menu.addThisSiteLabel "添加 $S 到 $B">
+
+<!-- Toolbar widgets -->
+<!ENTITY toolbar.timeLeft "LeechBlock 剩余时间">
+<!ENTITY tooltip.timeLeft "显示此站点被阻止的剩余时间">
+
+<!-- Warning dialog -->
+<!ENTITY warning.title "LeechBlock 警告">
+<!ENTITY warning.alertBlock "$B 中的网站将在 $S 秒后被阻止。">
+
+<!-- Options dialog -->
+<!ENTITY options.passwordPrompt "输入密码来访问选项：">
+<!ENTITY options.accessCodePrompt "输入下面的代码来访问选项：">
+<!ENTITY options.title "LeechBlock 选项">
+<!ENTITY options.accessTabLabel "访问控制">
+<!ENTITY options.generalTabLabel "常规">
+<!ENTITY options.whatBlockTabLabel "阻止内容">
+<!ENTITY options.whenBlockTabLabel "阻止时间">
+<!ENTITY options.howBlockTabLabel "阻止方式">
+<!ENTITY options.advancedTabLabel "高级">
+<!ENTITY options.backLabel "&lt; 返回">
+<!ENTITY options.nextLabel "继续 &gt;">
+<!ENTITY options.whatBlockDesc "第一步：设置你要阻止的网站。">
+<!ENTITY options.customSetName "为此阻止设置输入一个自定义名称(可选)：">
+<!ENTITY options.clearSetName "清除自定义名称">
+<!ENTITY options.sitesDesc "输入要阻止的网站的域名(每行一个)：">
+<!ENTITY options.sitesTooltip "使用 * 作为通配符，使用 + 作为例外的前缀">
+<!ENTITY options.sitesLoadFromURL "从 URL 载入网站列表(可选)：">
+<!ENTITY options.sitesURLTooltip "使用 $S 来传递阻止设置号，使用 $T 来传递 UTC 毫秒时间戳">
+<!ENTITY options.whenBlockDesc "第二步：设置你要阻止这些网站的时间。">
+<!ENTITY options.timesDesc "输入要阻止这些网站的时间段(例如 0900-1230、1330-1700)：">
+<!ENTITY options.timesTooltip "如果没有时间段请留空">
+<!ENTITY options.allDayLabel "全天">
+<!ENTITY options.alertBadTimes "请以当前格式输入时间段。请使用 24 小时格式输入时间，在开始时间和结束时间之间用破折号(-)连接，用逗号(,)或者空格来分隔时间段。">
+<!ENTITY options.confPrevOptsAllDay "你确定要全天阻止访问选项吗？">
+<!ENTITY options.timeLimitDesc "输入阻止这些网站的时间限制：">
+<!ENTITY options.timeLimitTooltip "如果没有时间限制请留空">
+<!ENTITY options.minsInEveryDesc "分钟数每个">
+<!ENTITY options.quarterHourMenuItem "一刻钟 (15 分钟)">
+<!ENTITY options.halfHourMenuItem "半小时 (30 分钟)">
+<!ENTITY options.hourMenuItem "1 小时">
+<!ENTITY options.twoHoursMenuItem "2 小时">
+<!ENTITY options.threeHoursMenuItem "3 小时">
+<!ENTITY options.fourHoursMenuItem "4 小时">
+<!ENTITY options.sixHoursMenuItem "6 小时">
+<!ENTITY options.halfDayMenuItem "半天 (12 小时)">
+<!ENTITY options.dayMenuItem "1 天 (24 小时)">
+<!ENTITY options.twoDaysMenuItem "2 天 (48 小时)">
+<!ENTITY options.weekMenuItem "一周 (7 天)">
+<!ENTITY options.alertBadTimeLimit "请以正确格式输入时间显示(正整数)。">
+<!ENTITY options.modeDesc "选择阻止这些网站的时间：">
+<!ENTITY options.modeOrLabel "在设定的时间段内或者访问时间超过时间限制后">
+<!ENTITY options.modeAndLabel "在设定的时间段内并且访问时间超过时间限制后">
+<!ENTITY options.daysDesc "选择要在哪天阻止这些网站：">
+<!ENTITY options.dayLabel0 "星期日">
+<!ENTITY options.dayLabel1 "星期一">
+<!ENTITY options.dayLabel2 "星期二">
+<!ENTITY options.dayLabel3 "星期三">
+<!ENTITY options.dayLabel4 "星期四">
+<!ENTITY options.dayLabel5 "星期五">
+<!ENTITY options.dayLabel6 "星期六">
+<!ENTITY options.everyDayLabel "每天">
+<!ENTITY options.howBlockDesc "第三步：设置怎样阻止这些网站。">
+<!ENTITY options.blockDesc "输入满足指定条件的 URL 的网页来替代显示这些阻止的网站：">
+<!ENTITY options.blockTooltip "使用 $U 来传递阻止页面的 URL">
+<!ENTITY options.predefinedURLs "预定义的 URL：">
+<!ENTITY options.defaultPageLabel "默认页面">
+<!ENTITY options.delayingPageLabel "延迟页面">
+<!ENTITY options.blankPageLabel "空页面">
+<!ENTITY options.homePageLabel "主页">
+<!ENTITY options.activeBlockLabel "动态的阻止这些网站的网页，一旦到了时间段或者超过时间限制">
+<!ENTITY options.countFocusLabel "仅在相应的浏览器标签活动时计算在网站上使用的时间">
+<!ENTITY options.delaySecsDesc1 "延迟访问网站的时间">
+<!ENTITY options.delaySecsDesc2 "使用延迟页面的秒数">
+<!ENTITY options.advancedWarnDesc1 "警告！">
+<!ENTITY options.advancedWarnDesc2 "请在确认理解这些选项可能导致的后果之后选择它们。">
+<!ENTITY options.accessControlLabel "访问控制">
+<!ENTITY options.prevOptsLabel "当网站被阻止时，禁止访问此阻止设置的选项">
+<!ENTITY options.prevAddonsLabel "当网站被阻止时，禁止访问 about:addons">
+<!ENTITY options.prevConfigLabel "当网站被阻止时，禁止访问 about:config">
+<!ENTITY options.lockdownLabel "锁定">
+<!ENTITY options.cancelLockdownLabel "取消当前活动的锁定">
+<!ENTITY options.confCancelLockdown "你确定要为此阻止设置取消当前活动的锁定？">
+<!ENTITY options.optionsAccessLabel "选项访问">
+<!ENTITY options.accessDesc "选择访问选项需要的条件：">
+<!ENTITY options.accessMenuItem0 "不要求用户输入密码或者访问码">
+<!ENTITY options.accessMenuItem1 "要求用户输入密码">
+<!ENTITY options.accessMenuItem2 "要求用户输入随机的 32 字符的访问码">
+<!ENTITY options.accessMenuItem3 "要求用户输入随机的 64 字符的访问码">
+<!ENTITY options.accessMenuItem4 "要求用户输入随机的 128 字符的访问码">
+<!ENTITY options.passwordDesc "访问选项时输入密码：">
+<!ENTITY options.clearPasswordLabel "清除密码">
+<!ENTITY options.hidePasswordLabel "在提示输入时隐藏密码字符">
+<!ENTITY options.browserModsLabel "浏览器修改">
+<!ENTITY options.hideExtension "在附加组件管理器中隐藏 LeechBlock 扩展">
+<!ENTITY options.hideSafeMode "隐藏“禁用所用附加组件重新启动”菜单项(需要重新启动浏览器来应用此设置)">
+<!ENTITY options.miscLabel "杂项">
+<!ENTITY options.warnMessageDesc1 "显示警告消息">
+<!ENTITY options.warnMessageDesc2 "网站将要被阻止的秒数">
+<!ENTITY options.warnMessageTooltip "如果没有警告消息请留空">
+<!ENTITY options.alertBadSeconds "请以正确的格式输入秒数(需要是正数)。">
+<!ENTITY options.showTimeLeftLabel "在状态栏中显示站点被阻止的剩余时间">
+<!ENTITY options.blockEmbeddedLabel "阻止嵌入页(例如嵌入的框架)">
+<!ENTITY options.keepPageBackLabel "在浏览器的后退历史中保存被阻止的页面">
+<!ENTITY options.hideContMenuLabel "隐藏 LeechBlock 上下文菜单(重新启动浏览器来应用此设置)">
+<!ENTITY options.hideTimeLeftLabel "不活动时隐藏“LeechBlock 剩余时间”工具栏项">
+<!ENTITY options.exportImportLabel "导出/导入">
+<!ENTITY options.exportOptionsLabel "导出选项">
+<!ENTITY options.importOptionsLabel "导入选项">
+<!ENTITY options.openVersionHistory "版本历史">
+<!ENTITY options.openHomePage "主页">
+<!ENTITY options.openExamplesPage "实例">
+<!ENTITY options.openFAQPage "常见问题">
+<!ENTITY options.supportLeechBlock "支持 LeechBlock">
+
+<!-- Statistics dialog -->
+<!ENTITY stats.title "LeechBlock 统计数据">
+<!ENTITY stats.startTimeLabel "开始日期/时间">
+<!ENTITY stats.totalTimeLabel "总用时">
+<!ENTITY stats.perDayTimeLabel "每天用时">
+<!ENTITY stats.timeLeftLabel "限制时间剩余">
+<!ENTITY stats.naLabel "N/A">
+<!ENTITY stats.restartAllLabel "重新开始所有">
+<!ENTITY stats.restartLabel "重新开始">
+
+<!-- Lockdown dialog -->
+<!ENTITY lockdown.title "LeechBlock 锁定">
+<!ENTITY lockdown.enterDurationLabel "输入锁定的持续时间：">
+<!ENTITY lockdown.hoursLabel "小时">
+<!ENTITY lockdown.minutesLabel "分钟">
+<!ENTITY lockdown.selectSitesLabel "选择锁定期间要阻止的网站：">
+<!ENTITY lockdown.setSelectionLabel "在此阻止集中设定的网站：">
+<!ENTITY lockdown.alertLockdown "目前正在锁定状态，将持续到：">
+
+<!-- Localization for internal HTML pages -->
+<!ENTITY	language					"zh-CN">
+<!ENTITY	siteBlocked					"网站已被阻止">
+<!ENTITY	pageAccessBlocked1			"你正在尝试访问的页面已被 ">
+<!ENTITY	pageAccessBlocked2			" 阻止。">
+<!ENTITY	pageAccessDelayed1			"你正在尝试访问的页面已被 ">
+<!ENTITY	pageAccessDelayed2			" 阻止。">
+<!ENTITY	youCanClickHere1			"你可以在阻止过期后">
+<!ENTITY	youCanClickHere2			"点击此处">
+<!ENTITY	youCanClickHere3			"访问页面。">
+<!ENTITY	pageWillBeLoaded1			"页面将在 ">
+<!ENTITY	pageWillBeLoaded2			" 秒后载入。">
+<!ENTITY	considerSupport1			"如果 LeechBlock 帮助你提高了生活质量，请考虑通过">
+<!ENTITY	considerSupport2			"">
+<!ENTITY	considerSupport3			"进行捐助或者撰写评论">
+<!ENTITY	considerSupport4			"来支持它的继续开发。">

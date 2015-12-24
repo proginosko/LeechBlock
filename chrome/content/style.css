@@ -1,0 +1,16 @@
+body {
+	background-color: #FFF;
+	color: #000;
+	font: normal medium "Trebuchet MS", "Trebuchet", "Arial", sans-serif;
+	text-align: center;
+}
+
+.support {
+	color: #888;
+	font-size: medium;
+	font-style: normal;
+}
+
+.support a {
+	color: #888;
+}
