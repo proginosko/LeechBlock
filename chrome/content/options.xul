@@ -1497,17 +1497,17 @@
 	<hbox align="center">
 		<spacer flex="1"/>
 		<label class="text-link" value="&options.openHomePage;"
-			href="http://www.proginosko.com/leechblock.html"
-			tooltiptext="http://www.proginosko.com/leechblock.html"/>
+			href="http://www.proginosko.com/leechblock/"
+			tooltiptext="http://www.proginosko.com/leechblock/"/>
 		<label class="text-link" value="&options.openExamplesPage;"
-			href="http://www.proginosko.com/leechblock_examples.html"
-			tooltiptext="http://www.proginosko.com/leechblock_examples.html"/>
+			href="http://www.proginosko.com/leechblock/examples/"
+			tooltiptext="http://www.proginosko.com/leechblock/examples/"/>
 		<label class="text-link" value="&options.openFAQPage;"
-			href="http://www.proginosko.com/leechblock_faq.html"
-			tooltiptext="http://www.proginosko.com/leechblock_faq.html"/>
+			href="http://www.proginosko.com/leechblock/faq/"
+			tooltiptext="http://www.proginosko.com/leechblock/faq/"/>
 		<label class="text-link" value="&options.openVersionHistory;"
-			href="http://www.proginosko.com/leechblock_history.html"
-			tooltiptext="http://www.proginosko.com/leechblock_history.html"/>
+			href="http://www.proginosko.com/leechblock/version-history/"
+			tooltiptext="http://www.proginosko.com/leechblock/version-history/"/>
 		<label class="text-link" value="&options.supportLeechBlock;"
 			href="https://addons.mozilla.org/en-US/firefox/addon/leechblock/"
 			tooltiptext="https://addons.mozilla.org/en-US/firefox/addon/leechblock/"/>
