@@ -4,7 +4,7 @@
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>{a95d8332-e4b4-6e7f-98ac-20b733364387}</em:id>
-		<em:version>1.0.1</em:version>
+		<em:version>1.0.2</em:version>
 		<em:type>2</em:type>
 		<em:unpack>true</em:unpack>
 		<em:name>LeechBlock</em:name>
