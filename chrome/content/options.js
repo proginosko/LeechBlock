@@ -17,6 +17,11 @@ LeechBlock.optionsInit = function () {
 
 	// Get password
 	let password = LeechBlock.retrievePassword();
+	if (password == null) {
+		// Close options dialog
+		window.close();
+		return;
+	}
 	document.getElementById("lb-options-password").value = password;
 
 	// Get access preferences

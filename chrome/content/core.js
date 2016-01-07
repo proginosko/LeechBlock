@@ -445,6 +445,7 @@ LeechBlock.retrievePassword = function () {
 		}
 	} catch (e) {
 		console.warn("[LB] Cannot retrieve password: " + e.toString());
+		return null;
 	}
 
 	return ""; // no password found
