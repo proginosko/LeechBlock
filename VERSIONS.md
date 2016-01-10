@@ -1,3 +1,7 @@
+### Version 1.0.2 (06 Jan 2016)
+* Fixed loophole with access password for options.
+* Updated URLs in options dialog.
+
 ### Version 1.0.1 (18 Dec 2015)
 * Changed code to allow for custom blocking/delaying pages.
 * Added tab icon to blocking/delaying pages (thanks to Chris Crowley).
