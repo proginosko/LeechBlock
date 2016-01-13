@@ -1,3 +1,6 @@
+### Version 1.0.2.1 (13 Jan 2016)
+* Fixed compatibility for Firefox ESR.
+
 ### Version 1.0.2 (06 Jan 2016)
 * Fixed loophole with access password for options.
 * Updated URLs in options dialog.
