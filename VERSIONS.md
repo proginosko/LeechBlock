@@ -1,3 +1,6 @@
+### Version 1.0.2.2 (16 Jan 2016)
+* Fixed issue with options dialog failing to open for some users.
+
 ### Version 1.0.2.1 (13 Jan 2016)
 * Fixed compatibility for Firefox ESR.
 
