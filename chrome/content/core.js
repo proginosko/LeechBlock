@@ -445,7 +445,9 @@ LeechBlock.retrievePassword = function () {
 		}
 	} catch (e) {
 		console.warn("[LB] Cannot retrieve password: " + e.toString());
-		return null;
+		if (e.result == Cr.NS_ERROR_ABORT) {
+			return null; // user canceled master password entry
+		}
 	}
 
 	return ""; // no password found
