@@ -134,6 +134,7 @@ LeechBlock.optionsInit = function () {
 		let prevAddons = LeechBlock.getBitPref("prevAddons", set);
 		let prevConfig = LeechBlock.getBitPref("prevConfig", set);
 		let countFocus = LeechBlock.getBitPref("countFocus", set);
+		let delayFirst = LeechBlock.getBitPref("delayFirst", set);
 		let delaySecs = LeechBlock.getCharPref("delaySecs" + set);
 		let times = LeechBlock.getCharPref("times" + set);
 		let limitMins = LeechBlock.getCharPref("limitMins" + set);
@@ -151,6 +152,7 @@ LeechBlock.optionsInit = function () {
 		document.getElementById("lb-prev-addons" + set).checked = prevAddons;
 		document.getElementById("lb-prev-config" + set).checked = prevConfig;
 		document.getElementById("lb-count-focus" + set).checked = countFocus;
+		document.getElementById("lb-delay-first" + set).checked = delayFirst;
 		document.getElementById("lb-delay-secs" + set).value = delaySecs;
 		document.getElementById("lb-times" + set).value = times;
 		document.getElementById("lb-limit-mins" + set).value = limitMins;
@@ -256,6 +258,7 @@ LeechBlock.optionsOK = function () {
 		let prevAddons = document.getElementById("lb-prev-addons" + set).checked;
 		let prevConfig = document.getElementById("lb-prev-config" + set).checked;
 		let countFocus = document.getElementById("lb-count-focus" + set).checked;
+		let delayFirst = document.getElementById("lb-delay-first" + set).checked;
 		let delaySecs = document.getElementById("lb-delay-secs" + set).value;
 		let times = document.getElementById("lb-times" + set).value;
 		let limitMins = document.getElementById("lb-limit-mins" + set).value;
@@ -289,6 +292,7 @@ LeechBlock.optionsOK = function () {
 		LeechBlock.setBitPref("prevAddons", set, prevAddons);
 		LeechBlock.setBitPref("prevConfig", set, prevConfig);
 		LeechBlock.setBitPref("countFocus", set, countFocus);
+		LeechBlock.setBitPref("delayFirst", set, delayFirst);
 		LeechBlock.setCharPref("delaySecs" + set, delaySecs);
 		LeechBlock.setUniCharPref("blockRE" + set, regexps.block);
 		LeechBlock.setUniCharPref("allowRE" + set, regexps.allow);
@@ -341,7 +345,7 @@ LeechBlock.optionsCancel = function () {
 LeechBlock.disableSetOptions = function (set) {
 	let items = [
 		"sites", "sites-URL",
-		"active-block", "count-focus", "delay-secs",
+		"active-block", "count-focus", "delay-first", "delay-secs",
 		"times", "all-day",
 		"limit-mins", "limit-period", "mode",
 		"day0", "day1", "day2", "day3", "day4", "day5", "day6", "every-day",
@@ -479,6 +483,7 @@ LeechBlock.exportOptions = function () {
 		let prevAddons = document.getElementById("lb-prev-addons" + set).checked;
 		let prevConfig = document.getElementById("lb-prev-config" + set).checked;
 		let countFocus = document.getElementById("lb-count-focus" + set).checked;
+		let delayFirst = document.getElementById("lb-delay-first" + set).checked;
 		let delaySecs = document.getElementById("lb-delay-secs" + set).value;
 		let times = document.getElementById("lb-times" + set).value;
 		let limitMins = document.getElementById("lb-limit-mins" + set).value;
@@ -499,6 +504,7 @@ LeechBlock.exportOptions = function () {
 		text += "prevAddons" + set + "=" + prevAddons+ "\n";
 		text += "prevConfig" + set + "=" + prevConfig + "\n";
 		text += "countFocus" + set + "=" + countFocus + "\n";
+		text += "delayFirst" + set + "=" + delayFirst + "\n";
 		text += "delaySecs" + set + "=" + delaySecs + "\n";
 		text += "times" + set + "=" + times + "\n";
 		text += "limitMins" + set + "=" + limitMins + "\n";
@@ -591,6 +597,7 @@ LeechBlock.importOptions = function () {
 		let prevAddons = opts["prevAddons" + set];
 		let prevConfig = opts["prevConfig" + set];
 		let countFocus = opts["countFocus" + set];
+		let delayFirst = opts["delayFirst" + set];
 		let delaySecs = opts["delaySecs" + set];
 		let times = opts["times" + set];
 		let limitMins = opts["limitMins" + set]
@@ -647,6 +654,12 @@ LeechBlock.importOptions = function () {
 			let element = document.getElementById("lb-count-focus" + set);
 			if (!element.disabled) {
 				element.checked = isTrue(countFocus);
+			}
+		}
+		if (delayFirst != undefined) {
+			let element = document.getElementById("lb-delay-first" + set);
+			if (!element.disabled) {
+				element.checked = isTrue(delayFirst);
 			}
 		}
 		if (delaySecs != undefined) {

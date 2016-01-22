@@ -146,21 +146,23 @@ LeechBlock.updatePreferences = function () {
 // Returns parsed URL (page address, arguments, and hash)
 //
 LeechBlock.getParsedURL = function (url) {
-	const PARSE_URL = /^((\w+):\/*(\w+(?::\w+)?@)?([\w-\.]+)(?::(\d+))?([^\?#]*))(\?[^#]*)?(#.*)?$/;
+	const PARSE_URL = /^(((\w+):\/*(\w+(?::\w+)?@)?([\w-\.]+)(?::(\d*))?)([^\?#]*))(\?[^#]*)?(#.*)?$/;
 
 	let results = PARSE_URL.exec(url);
 	if (results != null) {
 		let page = results[1];
-		let protocol = results[2];
-		let userinfo = results[3];
-		let host = results[4];
-		let port = results[5];
-		let path = results[6];
-		let query = results[7];
-		let fragment = results[8];
+		let origin = results[2];
+		let protocol = results[3];
+		let userinfo = results[4];
+		let host = results[5];
+		let port = results[6];
+		let path = results[7];
+		let query = results[8];
+		let fragment = results[9];
 		return {
 			pageNoArgs: page,
 			page: (query == null) ? page : (page + query),
+			origin: origin,
 			protocol: protocol,
 			host: host,
 			path: path,
@@ -172,6 +174,7 @@ LeechBlock.getParsedURL = function (url) {
 		return {
 			pageNoArgs: null,
 			page: null,
+			origin: null,
 			protocol: null,
 			host: null,
 			path: null,

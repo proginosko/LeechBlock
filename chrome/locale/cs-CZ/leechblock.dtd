@@ -77,6 +77,7 @@
 <!ENTITY	options.homePageLabel		"Domovská stránka">
 <!ENTITY	options.activeBlockLabel	"Aktivně blokovat otevřené stránky jakmile začne vybrané období nebo uplyne časový limit">
 <!ENTITY	options.countFocusLabel		"Počítat čas strávený na stránkách pouze pokud je panel aktivní">
+<!ENTITY	options.delayFirstLabel		"Block only first accessed page of site when delaying page is used">
 <!ENTITY	options.delaySecsDesc1		"Odložit přístup na stránky o">
 <!ENTITY	options.delaySecsDesc2		"sekund při použití stránky odložení">
 <!ENTITY	options.advancedWarnDesc1	"Upozornění!">

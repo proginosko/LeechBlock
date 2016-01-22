@@ -77,6 +77,7 @@
 <!ENTITY options.homePageLabel "主頁">
 <!ENTITY options.activeBlockLabel "在時間段或者超過時間限制主動封鎖這些網站">
 <!ENTITY options.countFocusLabel "僅於使用該網頁時計算在消耗時間">
+<!ENTITY options.delayFirstLabel "Block only first accessed page of site when delaying page is used">
 <!ENTITY options.delaySecsDesc1 "延遲存取網站的時間">
 <!ENTITY options.delaySecsDesc2 "使用延遲頁面的秒數">
 <!ENTITY options.advancedWarnDesc1 "警告！">

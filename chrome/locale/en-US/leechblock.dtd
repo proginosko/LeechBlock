@@ -77,6 +77,7 @@
 <!ENTITY	options.homePageLabel		"Home Page">
 <!ENTITY	options.activeBlockLabel	"Actively block pages on these sites once time period is entered or time limit is exceeded">
 <!ENTITY	options.countFocusLabel		"Count time spent on these sites only when browser tab is active">
+<!ENTITY	options.delayFirstLabel		"Block only first accessed page of site when delaying page is used">
 <!ENTITY	options.delaySecsDesc1		"Delay access to sites by">
 <!ENTITY	options.delaySecsDesc2		"seconds when delaying page is used">
 <!ENTITY	options.advancedWarnDesc1	"Warning!">

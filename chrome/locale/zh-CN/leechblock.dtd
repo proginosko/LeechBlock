@@ -77,6 +77,7 @@
 <!ENTITY options.homePageLabel "主页">
 <!ENTITY options.activeBlockLabel "动态的阻止这些网站的网页，一旦到了时间段或者超过时间限制">
 <!ENTITY options.countFocusLabel "仅在相应的浏览器标签活动时计算在网站上使用的时间">
+<!ENTITY options.delayFirstLabel "Block only first accessed page of site when delaying page is used">
 <!ENTITY options.delaySecsDesc1 "延迟访问网站的时间">
 <!ENTITY options.delaySecsDesc2 "使用延迟页面的秒数">
 <!ENTITY options.advancedWarnDesc1 "警告！">
