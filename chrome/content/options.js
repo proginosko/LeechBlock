@@ -572,8 +572,8 @@ LeechBlock.importOptions = function () {
 	let regexp = /^(\w+)=(.*)$/;
 	let lines = text.split(/\n/);
 	let opts = {};
-	for (let i in lines) {
-		let results = regexp.exec(lines[i]);
+	for (let line of lines) {
+		let results = regexp.exec(line);
 		if (results != null) {
 			opts[results[1]] = results[2];
 		}
