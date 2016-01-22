@@ -31,8 +31,8 @@ LeechBlock.progressListener = {
 // Handles browser loading
 //
 LeechBlock.onLoad = function (event) {
-	// Update old preferences if necessary
-	LeechBlock.updatePreferences();
+	// Clean preferences
+	LeechBlock.cleanPreferences();
 
 	// Add progress listener for this browser instance
 	gBrowser.addProgressListener(LeechBlock.progressListener);
@@ -351,13 +351,12 @@ LeechBlock.checkWindow = function (parsedURL, win, isRepeat) {
 				let mins = timedate.getHours() * 60 + timedate.getMinutes();
 
 				// Check each time period in turn
-				for (let i in minPeriods) {
-					if (mins >= minPeriods[i].start
-							&& mins < minPeriods[i].end) {
+				for (let mp of minPeriods) {
+					if (mins >= mp.start && mins < mp.end) {
 						secsLeftBeforePeriod = 0;
-					} else if (mins < minPeriods[i].start) {
+					} else if (mins < mp.start) {
 						// Compute exact seconds before this time period starts
-						let secs = (minPeriods[i].start - mins) * 60
+						let secs = (mp.start - mins) * 60
 								- timedate.getSeconds();
 						if (secs < secsLeftBeforePeriod) {
 							secsLeftBeforePeriod = secs;
@@ -712,9 +711,8 @@ LeechBlock.updateTimeData = function (doc, secsOpen, secsFocus) {
 				let mins = timedate.getHours() * 60 + timedate.getMinutes();
 
 				// Check each time period in turn
-				for (let i in minPeriods) {
-					if (mins >= minPeriods[i].start
-							&& mins < minPeriods[i].end) {
+				for (let mp of minPeriods) {
+					if (mins >= mp.start && mins < mp.end) {
 						countTimeSpentInPeriod = true;
 					}
 				}

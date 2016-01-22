@@ -131,15 +131,20 @@ LeechBlock.savePreferences = function () {
 			.savePrefFile(null);
 }
 
-// Updates old preferences
+// Cleans preferences
 //
-LeechBlock.updatePreferences = function () {
+LeechBlock.cleanPreferences = function () {
 	for (let set = 1; set <= 6; set++) {
+		// Convert old URLs for blocking/delaying pages
 		let blockURL = LeechBlock.getUniCharPref("blockURL" + set);
 		if (blockURL == LeechBlock.DEFAULT_BLOCK_URL_OLD)
 			LeechBlock.setUniCharPref("blockURL" + set, LeechBlock.DEFAULT_BLOCK_URL);
 		if (blockURL == LeechBlock.DELAYED_BLOCK_URL_OLD)
 			LeechBlock.setUniCharPref("blockURL" + set, LeechBlock.DELAYED_BLOCK_URL);
+		
+		// Clean time periods
+		let times = LeechBlock.getUniCharPref("times" + set);
+		LeechBlock.setUniCharPref("times" + set, LeechBlock.cleanTimePeriods(times));
 	}
 }
 
@@ -264,10 +269,10 @@ LeechBlock.testURL = function (pageURL, blockRE, allowRE) {
 			&& !(allowRE != "" && (new RegExp(allowRE, "i")).test(pageURL)));
 }
 
-// Checks times format
+// Checks time periods format
 //
-LeechBlock.checkTimesFormat = function (times) {
-	return (times == "") || /^\d\d\d\d-\d\d\d\d([, ]+\d\d\d\d-\d\d\d\d)*$/.test(times);
+LeechBlock.checkTimePeriodsFormat = function (times) {
+	return (times == "") || /^[0-2]\d[0-5]\d-[0-2]\d[0-5]\d([, ]+[0-2]\d[0-5]\d-[0-2]\d[0-5]\d)*$/.test(times);
 }
 
 // Checks positive integer format
@@ -276,15 +281,15 @@ LeechBlock.checkPosIntFormat = function (value) {
 	return (value == "") || /^[1-9][0-9]*$/.test(value);
 }
 
-// Extracts times as minute periods
+// Converts times to minute periods
 //
 LeechBlock.getMinPeriods = function (times) {
 	let minPeriods = [];
 	if (times != "") {
 		let regexp = /^(\d\d)(\d\d)-(\d\d)(\d\d)$/;
 		let periods = times.split(/[, ]+/);
-		for (let i in periods) {
-			let results = regexp.exec(periods[i]);
+		for (let period of periods) {
+			let results = regexp.exec(period);
 			if (results != null) {
 				let minPeriod = {
 					start: (parseInt(results[1], 10) * 60 + parseInt(results[2], 10)),
@@ -295,6 +300,61 @@ LeechBlock.getMinPeriods = function (times) {
 		}
 	}
 	return minPeriods;
+}
+
+// Cleans time periods
+//
+LeechBlock.cleanTimePeriods = function (times) {
+	// Convert to minute periods
+	let minPeriods = LeechBlock.getMinPeriods(times);
+	if (minPeriods.length == 0) {
+		return ""; // nothing to do
+	}
+
+	// Step 1: Fix any times > 2400
+	for (let mp of minPeriods) {
+		mp.start = Math.min(mp.start, 1440);
+		mp.end = Math.min(mp.end, 1440);
+	}		
+
+	// Step 2: Remove any periods without +ve duration
+	for (let i = 0; i < minPeriods.length; i++) {
+		if (minPeriods[i].start >= minPeriods[i].end) {
+			minPeriods.splice(i--, 1);
+		}
+	}
+
+	// Step 3: Sort periods in order of start time
+	minPeriods.sort(function (a, b) { return (a.start - b.start); });
+
+	// Step 4: Combine overlapping periods
+	for (let i = 0; i < (minPeriods.length - 1); i++) {
+		let mp1 = minPeriods[i];
+		let mp2 = minPeriods[i + 1];
+		if (mp2.start <= mp1.end) {
+			// Merge first period into second period (and back up index)
+			mp2.start = mp1.start;
+			mp2.end = Math.max(mp1.end, mp2.end);
+			minPeriods.splice(i--, 1);
+		}
+	}
+
+	// Convert back to string list of time periods
+	let cleanTimes = [];
+	for (let mp of minPeriods) {
+		let h1 = Math.floor(mp.start / 60);
+		let m1 = (mp.start % 60);
+		let h2 = Math.floor(mp.end / 60);
+		let m2 = (mp.end % 60);
+		let period =
+				((h1 < 10) ? "0" : "") + h1 +
+				((m1 < 10) ? "0" : "") + m1 +
+				"-" +
+				((h2 < 10) ? "0" : "") + h2 +
+				((m2 < 10) ? "0" : "") + m2;
+		cleanTimes.push(period);
+	}
+	return cleanTimes.join(",");
 }
 
 // Encodes day selection

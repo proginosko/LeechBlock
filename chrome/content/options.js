@@ -91,9 +91,8 @@ LeechBlock.optionsInit = function () {
 				let mins = timedate.getHours() * 60 + timedate.getMinutes();
 
 				// Check each time period in turn
-				for (let i in minPeriods) {
-					if (mins >= minPeriods[i].start
-							&& mins < minPeriods[i].end) {
+				for (let mp of minPeriods) {
+					if (mins >= mp.start && mins < mp.end) {
 						withinTimePeriods = true;
 					}
 				}
@@ -195,7 +194,7 @@ LeechBlock.optionsOK = function () {
 		let delaySecs = document.getElementById("lb-delay-secs" + set).value;
 
 		// Check values
-		if (!LeechBlock.checkTimesFormat(times)) {
+		if (!LeechBlock.checkTimePeriodsFormat(times)) {
 			LeechBlock.setOuterTab(set - 1);
 			LeechBlock.setInnerTab(set, 1);
 			LeechBlock.alertBadTimes();
@@ -293,7 +292,7 @@ LeechBlock.optionsOK = function () {
 		LeechBlock.setUniCharPref("blockRE" + set, regexps.block);
 		LeechBlock.setUniCharPref("allowRE" + set, regexps.allow);
 		LeechBlock.setUniCharPref("keywordRE" + set, regexps.keyword);
-		LeechBlock.setCharPref("times" + set, times);
+		LeechBlock.setCharPref("times" + set, LeechBlock.cleanTimePeriods(times));
 		LeechBlock.setCharPref("limitMins" + set, limitMins);
 		LeechBlock.setCharPref("limitPeriod" + set, limitPeriod);
 		LeechBlock.setBitPref("conjMode", set, conjMode);
@@ -500,7 +499,7 @@ LeechBlock.exportOptions = function () {
 		text += "prevConfig" + set + "=" + prevConfig + "\n";
 		text += "countFocus" + set + "=" + countFocus + "\n";
 		text += "delaySecs" + set + "=" + delaySecs + "\n";
-		text += "times" + set + "=" + times + "\n";
+		text += "times" + set + "=" + LeechBlock.cleanTimePeriods(times) + "\n";
 		text += "limitMins" + set + "=" + limitMins + "\n";
 		text += "limitPeriod" + set + "=" + limitPeriod + "\n";
 		text += "conjMode" + set + "=" + conjMode + "\n";
