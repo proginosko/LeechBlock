@@ -79,8 +79,9 @@ LeechBlock.lockdownOK = function () {
 		LeechBlock.setCharPref("timedata" + set, timedata.join(","));
 	}
 
-	// Clear preference for allowed host
-	LeechBlock.clearUserPref("ah");
+	// Clear preference for allowed origin/page
+	LeechBlock.clearUserPref("ao");
+	LeechBlock.clearUserPref("ap");
 
 	return true;
 }

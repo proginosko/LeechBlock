@@ -165,11 +165,16 @@ LeechBlock.onPageLoad = function (event) {
 		return;
 	}
 
-	// Clear preference for allowed host (unless this page is on allowed host)
-	if (/^http|file|about/.test(parsedURL.protocol)
-			&& (win.frameElement == null)
-			&& parsedURL.host != LeechBlock.getUniCharPref("ah")) {
-		LeechBlock.clearUserPref("ah");
+	// Clear preference for allowed origin/page if this is different origin/page
+	let ao = LeechBlock.getUniCharPref("ao");
+	let ap = LeechBlock.getUniCharPref("ap");
+	if (/^http|file|about/.test(parsedURL.protocol) && (win.frameElement == null)) {
+		if (parsedURL.origin != ao) {
+			LeechBlock.clearUserPref("ao");
+		}
+		if (parsedURL.page != ap) {
+			LeechBlock.clearUserPref("ap");
+		}
 	}
 
 	// Hide extension in about:addons (if option selected)
@@ -248,6 +253,7 @@ LeechBlock.onPageLoad = function (event) {
 			let countdown = {
 				win: win,
 				blockedURL: blockedURL,
+				blockedSet: blockedSet,
 				delaySecs: delaySecs
 			};
 			doc.leechblockCountdownInterval = setInterval(
@@ -303,8 +309,10 @@ LeechBlock.checkWindow = function (parsedURL, win, isRepeat) {
 		return;
 	}
 
-	// Quick exit for allowed host
-	if (parsedURL.host == LeechBlock.getUniCharPref("ah")) {
+	// Quick exit for allowed origin/page
+	let ao = LeechBlock.getUniCharPref("ao");
+	let ap = LeechBlock.getUniCharPref("ap");
+	if (parsedURL.origin == ao || parsedURL.page == ap) {
 		return;
 	}
 
@@ -797,8 +805,14 @@ LeechBlock.onCountdownTimer = function (countdown) {
 		// Get parsed URL for blocked page
 		let parsedURL = LeechBlock.getParsedURL(countdown.blockedURL);
 
-		// Set preference for allowed host
-		LeechBlock.setUniCharPref("ah", parsedURL.host);
+		// Set preference for allowed origin/page
+		if (LeechBlock.getBitPref("delayFirst", countdown.blockedSet)) {
+			LeechBlock.setUniCharPref("ao", parsedURL.origin);
+			LeechBlock.clearUserPref("ap");
+		} else {
+			LeechBlock.setUniCharPref("ap", parsedURL.page);
+			LeechBlock.clearUserPref("ao");
+		}
 
 		// Continue to blocked page
 		win.location = countdown.blockedURL;

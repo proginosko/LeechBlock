@@ -259,6 +259,11 @@
 									<spacer flex="1"/>
 								</hbox>
 								<hbox align="center">
+									<checkbox id="lb-delay-first1"
+										label="&options.delayFirstLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
 									<description>&options.delaySecsDesc1;</description>
 									<textbox id="lb-delay-secs1" size="2"/>
 									<description>&options.delaySecsDesc2;</description>
@@ -473,6 +478,11 @@
 								<hbox align="center">
 									<checkbox id="lb-count-focus2"
 										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-delay-first2"
+										label="&options.delayFirstLabel;"/>
 									<spacer flex="1"/>
 								</hbox>
 								<hbox align="center">
@@ -693,6 +703,11 @@
 									<spacer flex="1"/>
 								</hbox>
 								<hbox align="center">
+									<checkbox id="lb-delay-first3"
+										label="&options.delayFirstLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
 									<description>&options.delaySecsDesc1;</description>
 									<textbox id="lb-delay-secs3" size="2"/>
 									<description>&options.delaySecsDesc2;</description>
@@ -907,6 +922,11 @@
 								<hbox align="center">
 									<checkbox id="lb-count-focus4"
 										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-delay-first4"
+										label="&options.delayFirstLabel;"/>
 									<spacer flex="1"/>
 								</hbox>
 								<hbox align="center">
@@ -1127,6 +1147,11 @@
 									<spacer flex="1"/>
 								</hbox>
 								<hbox align="center">
+									<checkbox id="lb-delay-first5"
+										label="&options.delayFirstLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
 									<description>&options.delaySecsDesc1;</description>
 									<textbox id="lb-delay-secs5" size="2"/>
 									<description>&options.delaySecsDesc2;</description>
@@ -1341,6 +1366,11 @@
 								<hbox align="center">
 									<checkbox id="lb-count-focus6"
 										label="&options.countFocusLabel;"/>
+									<spacer flex="1"/>
+								</hbox>
+								<hbox align="center">
+									<checkbox id="lb-delay-first6"
+										label="&options.delayFirstLabel;"/>
 									<spacer flex="1"/>
 								</hbox>
 								<hbox align="center">

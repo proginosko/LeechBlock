@@ -77,6 +77,7 @@
 <!ENTITY	options.homePageLabel		"Página Inicial">
 <!ENTITY	options.activeBlockLabel	"Bloquear ativamente as páginas desses sites assim que o horário começar ou quando o limite de tempo for excedido.">
 <!ENTITY	options.countFocusLabel		"Contar o tempo gasto nesses sites apenas quando a aba do navegador estiver ativa">
+<!ENTITY	options.delayFirstLabel		"Block only first accessed page of site when delaying page is used">
 <!ENTITY	options.delaySecsDesc1		"Atrasar o acesso aos sites em">
 <!ENTITY	options.delaySecsDesc2		"segundos quando a página de atraso for utilizada">
 <!ENTITY	options.advancedWarnDesc1	"Aviso!">
