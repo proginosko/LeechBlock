@@ -146,6 +146,9 @@
 <!ENTITY	pageAccessBlocked2			".">
 <!ENTITY	pageAccessDelayed1			"La page à laquelle vous essayez d'accéder a été momentanément bloquée par ">
 <!ENTITY	pageAccessDelayed2			".">
+<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
+<!ENTITY	nullUnblockTime				"the end of time">
+<!ENTITY	pageUnblockTime2			"">
 <!ENTITY	youCanClickHere1			"Vous pouvez ">
 <!ENTITY	youCanClickHere2			"cliquer ici">
 <!ENTITY	youCanClickHere3			" pour accéder à la page à la fin du blocage.">

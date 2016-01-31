@@ -212,6 +212,21 @@ LeechBlock.onPageLoad = function (event) {
 			// Die gracefully
 		}
 
+		// Set unblock time
+		let unblockTimeSpan = doc.getElementById("leechblockUnblockTimeSpan");
+		if (unblockTimeSpan != null) {
+			let unblockTime = LeechBlock.getUnblockTime(blockedSet);
+			if (unblockTime != null) {
+				if (unblockTime.getDate() == new Date().getDate()) {
+					// Same day: show time only
+					unblockTimeSpan.textContent = unblockTime.toLocaleTimeString();
+				} else {
+					// Different day: show date and time
+					unblockTimeSpan.textContent = unblockTime.toLocaleString();
+				}
+			}
+		}
+
 		// Set hyperlink to blocked page
 		let blockedURLLink = doc.getElementById("leechblockBlockedURLLink");
 		if (blockedURLLink != null) {
@@ -356,8 +371,7 @@ LeechBlock.checkWindow = function (parsedURL, win, isRepeat) {
 						secsLeftBeforePeriod = 0;
 					} else if (mins < mp.start) {
 						// Compute exact seconds before this time period starts
-						let secs = (mp.start - mins) * 60
-								- timedate.getSeconds();
+						let secs = (mp.start - mins) * 60 - timedate.getSeconds();
 						if (secs < secsLeftBeforePeriod) {
 							secsLeftBeforePeriod = secs;
 						}
@@ -921,6 +935,143 @@ LeechBlock.hideExtension = function (doc) {
 	doc.leechblockAddonsTimeout = setTimeout(
 			LeechBlock.hideExtension,
 			200, doc);
+}
+
+// Returns time when blocked sites will be unblocked (as localized string)
+//
+LeechBlock.getUnblockTime = function (set) {
+	// Get current time/date
+	let timedate = new Date();
+	
+	// Get current time in seconds
+	let now = Math.floor(Date.now() / 1000);
+
+	// Get preferences for this set
+	let timedata = LeechBlock.getCharPref("timedata" + set).split(",");
+	let times = LeechBlock.getCharPref("times" + set);
+	let minPeriods = LeechBlock.getMinPeriods(times);
+	let limitMins = LeechBlock.getCharPref("limitMins" + set);
+	let limitPeriod = LeechBlock.getCharPref("limitPeriod" + set);
+	let periodStart = LeechBlock.getTimePeriodStart(now, limitPeriod);
+	let conjMode = LeechBlock.getBitPref("conjMode", set);
+	let days = LeechBlock.getIntPref("days" + set);
+	let daySel = LeechBlock.decodeDays(days);
+
+	// Check for valid time data
+	if (timedata.length < 5) {
+		return null;
+	}
+
+	// Check for 24/7 block
+	if (times == LeechBlock.ALL_DAY_TIMES && days == 127 && !conjMode) {
+		return null;
+	}
+
+	// Check for lockdown
+	if (now < timedata[4]) {
+		// Return end time for lockdown
+		return new Date(timedata[4] * 1000);
+	}
+	
+	// Get number of minutes elapsed since midnight
+	let mins = timedate.getHours() * 60 + timedate.getMinutes();
+
+	// Create list of time periods for today and following seven days
+	let day = timedate.getDay();
+	let allMinPeriods = [];
+	for (let i = 0; i <= 7; i++) {
+		if (daySel[(day + i) % 7]) {
+			let offset = (i * 1440);
+			for (let mp of minPeriods) {
+				// Create new time period with offset
+				let mp1 = {
+					start: (mp.start + offset),
+					end: (mp.end + offset)
+				};
+				if (allMinPeriods.length == 0) {
+					// Add new time period
+					allMinPeriods.push(mp1);
+				} else {
+					mp0 = allMinPeriods[allMinPeriods.length - 1];
+					if (mp1.start <= mp0.end) {
+						// Merge time period into previous one
+						mp0.end = mp1.end;
+					} else {
+						// Add new time period
+						allMinPeriods.push(mp1);
+					}
+				}
+			}
+		}
+	}
+
+	let timePeriods = (times != "");
+	let timeLimit = (limitMins != "" && limitPeriod != "");
+
+	if (timePeriods && !timeLimit) {
+		// Case 1: within time periods (no time limit)
+		
+		// Find relevant time period
+		for (let mp of allMinPeriods) {
+			if (mins >= mp.start && mins < mp.end) {
+				// Return end time for time period
+				return new Date(
+						timedate.getFullYear(),
+						timedate.getMonth(),
+						timedate.getDate(),
+						0, mp.end);
+			}
+		}
+	} else if (!timePeriods && timeLimit) {
+		// Case 2: after time limit (no time periods)
+
+		// Return end time for current time limit period
+		return new Date(timedata[2] * 1000 + limitPeriod * 1000);
+	} else if (timePeriods && timeLimit) {
+		if (conjMode) {
+			// Case 3: within time periods AND after time limit
+
+			// Find relevant time period
+			for (let mp of allMinPeriods) {
+				if (mins >= mp.start && mins < mp.end) {
+					// Return the earlier of the two end times
+					let td1 = new Date(
+							timedate.getFullYear(),
+							timedate.getMonth(),
+							timedate.getDate(),
+							0, mp.end);
+					let td2 = new Date(timedata[2] * 1000 + limitPeriod * 1000);
+					return (td1 < td2) ? td1 : td2;
+				}
+			}
+		} else {
+			// Case 4: within time periods OR after time limit
+
+			// Determine whether time limit was exceeded
+			let afterTimeLimit = (timedata[2] == periodStart)
+					&& (timedata[3] >= (limitMins * 60));
+
+			if (afterTimeLimit) {
+				// Check against end time for current time limit period instead
+				let td = new Date(timedata[2] * 1000 + limitPeriod * 1000);
+				mins = td.getHours() * 60 + td.getMinutes();
+			}
+
+			// Find relevant time period
+			for (let mp of allMinPeriods) {
+				if (mins >= mp.start && mins < mp.end) {
+					// Return end time for time period
+					return new Date(
+							timedate.getFullYear(),
+							timedate.getMonth(),
+							timedate.getDate(),
+							0, mp.end);
+				}
+			}
+		}
+	}
+
+	return null;
 }
 
 // Add listeners for browser loading/unloading and page loading

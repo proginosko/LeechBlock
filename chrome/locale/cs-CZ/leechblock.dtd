@@ -146,6 +146,9 @@
 <!ENTITY	pageAccessBlocked2			".">
 <!ENTITY	pageAccessDelayed1			"Stránka, kterou se pokoušíte navštívit, byla dočasně zablokována pomocí ">
 <!ENTITY	pageAccessDelayed2			".">
+<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
+<!ENTITY	nullUnblockTime				"the end of time">
+<!ENTITY	pageUnblockTime2			"">
 <!ENTITY	youCanClickHere1			"Můžete ">
 <!ENTITY	youCanClickHere2			"kliknout zde">
 <!ENTITY	youCanClickHere3			" pro přechod na stránku jakmile zablokování vyprší.">
