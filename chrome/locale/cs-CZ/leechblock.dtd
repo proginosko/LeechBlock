@@ -33,7 +33,7 @@
 <!ENTITY	options.sitesDesc			"Vložte doménová jména stránek, které chcete blokovat (jednu doménu na jeden řádek):">
 <!ENTITY	options.sitesTooltip		"Použijte * jako univerzální znak a + jako prefix pro výjimky">
 <!ENTITY	options.sitesLoadFromURL	"Načíst seznam stránek z URL (volitelné):">
-<!ENTITY	options.sitesURLTooltip		"Use $S to pass block set number and $T to pass UTC timestamp in milliseconds">
+<!ENTITY	options.sitesURLTooltip		"Použije $S pro předání čísla bloku a $T pro UTC timestamp v milisekundách">
 <!ENTITY	options.whenBlockDesc		"Krok 2: Zvolte, kdy chcete stránky blokovat.">
 <!ENTITY	options.timesDesc			"Vložte časové rozmezí, kde chcete stránky blokovat(např. 0900-1230,1330-1700):">
 <!ENTITY	options.timesTooltip		"Ponechte prázdné pro žádné období">
@@ -77,7 +77,7 @@
 <!ENTITY	options.homePageLabel		"Domovská stránka">
 <!ENTITY	options.activeBlockLabel	"Aktivně blokovat otevřené stránky jakmile začne vybrané období nebo uplyne časový limit">
 <!ENTITY	options.countFocusLabel		"Počítat čas strávený na stránkách pouze pokud je panel aktivní">
-<!ENTITY	options.delayFirstLabel		"Block only first accessed page of site when delaying page is used">
+<!ENTITY	options.delayFirstLabel		"Blokovat pouze poprvé navštívené stránky, je-li použito odložení">
 <!ENTITY	options.delaySecsDesc1		"Odložit přístup na stránky o">
 <!ENTITY	options.delaySecsDesc2		"sekund při použití stránky odložení">
 <!ENTITY	options.advancedWarnDesc1	"Upozornění!">
@@ -88,7 +88,7 @@
 <!ENTITY	options.prevConfigLabel		"Zabránit přístupu do about:config v časech, kdy jsou stránky blokovány">
 <!ENTITY	options.lockdownLabel		"Uzamčení">
 <!ENTITY	options.cancelLockdownLabel	"Zrušit právě aktivní uzamčení">
-<!ENTITY	options.confCancelLockdown	"Opravud chcete zrušit právě aktivní uzamčení této sady stránek?">
+<!ENTITY	options.confCancelLockdown	"Opravdu chcete zrušit právě aktivní uzamčení této sady stránek?">
 <!ENTITY	options.optionsAccessLabel	"Možnosti přístupu">
 <!ENTITY	options.accessDesc			"Vložte požadavky pro přístup do možností:">
 <!ENTITY	options.accessMenuItem0		"Nepožadovat žádné heslo ani přístupový kód">
@@ -147,8 +147,8 @@
 <!ENTITY	pageAccessBlocked2			".">
 <!ENTITY	pageAccessDelayed1			"Stránka, kterou se pokoušíte navštívit, byla dočasně zablokována pomocí ">
 <!ENTITY	pageAccessDelayed2			".">
-<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
-<!ENTITY	nullUnblockTime				"the end of time">
+<!ENTITY	pageUnblockTime1			"Stránka přestane být blokována: ">
+<!ENTITY	nullUnblockTime				"nikdy">
 <!ENTITY	pageUnblockTime2			"">
 <!ENTITY	youCanClickHere1			"Můžete ">
 <!ENTITY	youCanClickHere2			"kliknout zde">
