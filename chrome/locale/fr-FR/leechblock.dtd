@@ -77,7 +77,7 @@
 <!ENTITY	options.homePageLabel		"Page d'accueil">
 <!ENTITY	options.activeBlockLabel	"Bloquer les sites sans attendre leur réactualisation quand les conditions de blocage sont réunies">
 <!ENTITY	options.countFocusLabel		"Décompter le temps passé sur les sites seulement quand leur onglet est actif">
-<!ENTITY	options.delayFirstLabel		"Block only first accessed page of site when delaying page is used">
+<!ENTITY	options.delayFirstLabel		"Bloquer uniquement la première page accédée sur le site quand le blocage de page momentané est sélectionné">
 <!ENTITY	options.delaySecsDesc1		"Retarder momentanément l'accès aux sites de">
 <!ENTITY	options.delaySecsDesc2		"secondes quand la page de blocage momentané est sélectionnée">
 <!ENTITY	options.advancedWarnDesc1	"Attention !">
@@ -147,8 +147,8 @@
 <!ENTITY	pageAccessBlocked2			".">
 <!ENTITY	pageAccessDelayed1			"La page à laquelle vous essayez d'accéder a été momentanément bloquée par ">
 <!ENTITY	pageAccessDelayed2			".">
-<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
-<!ENTITY	nullUnblockTime				"the end of time">
+<!ENTITY	pageUnblockTime1			"La page sera débloquée à: ">
+<!ENTITY	nullUnblockTime				"la fin des temps">
 <!ENTITY	pageUnblockTime2			"">
 <!ENTITY	youCanClickHere1			"Vous pouvez ">
 <!ENTITY	youCanClickHere2			"cliquer ici">
