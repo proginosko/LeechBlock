@@ -30,7 +30,7 @@
 <!ENTITY	options.whatBlockDesc		"1º Passo: Especifique os sites que você deseja bloquear.">
 <!ENTITY	options.customSetName		"Dê um nome a este conjunto de regras (opcional):">
 <!ENTITY	options.clearSetName		"Limpar nome personalizado">
-<!ENTITY	options.sitesDesc			"Digite os nomes de domínio dos sites a serem bloqueados (um item por linha):">
+<!ENTITY	options.sitesDesc			"Digite os nomes de domínio dos sites a serem bloqueados (um por linha):">
 <!ENTITY	options.sitesTooltip		"Use * como coringa e + no início para exceções">
 <!ENTITY	options.sitesLoadFromURL	"Carregar lista de sites a partir de URL (opcional):">
 <!ENTITY	options.sitesURLTooltip		"Use $S para especificar o nº do conjunto de regras e $T para o timestamp UTC em milissegundos">
@@ -77,7 +77,7 @@
 <!ENTITY	options.homePageLabel		"Página Inicial">
 <!ENTITY	options.activeBlockLabel	"Bloquear ativamente as páginas desses sites assim que o horário começar ou quando o limite de tempo for excedido.">
 <!ENTITY	options.countFocusLabel		"Contar o tempo gasto nesses sites apenas quando a aba do navegador estiver ativa">
-<!ENTITY	options.delayFirstLabel		"Block only first accessed page of site when delaying page is used">
+<!ENTITY	options.delayFirstLabel		"Bloquear apenas a primeira página acessada do site quando a página de atraso for usada">
 <!ENTITY	options.delaySecsDesc1		"Atrasar o acesso aos sites em">
 <!ENTITY	options.delaySecsDesc2		"segundos quando a página de atraso for utilizada">
 <!ENTITY	options.advancedWarnDesc1	"Aviso!">
@@ -138,7 +138,7 @@
 <!ENTITY	lockdown.minutesLabel		"minuto(s)">
 <!ENTITY	lockdown.selectSitesLabel	"Selecione os sites a bloquear durante a trava:">
 <!ENTITY	lockdown.setSelectionLabel	"Sites especificados no">
-<!ENTITY	lockdown.alertLockdown		"Uma trava está ativa atualmente e contuará até:">
+<!ENTITY	lockdown.alertLockdown		"Uma trava está ativa atualmente e continuará até:">
 
 <!-- Localization for internal HTML pages -->
 <!ENTITY	language					"pt">
@@ -147,8 +147,8 @@
 <!ENTITY	pageAccessBlocked2			".">
 <!ENTITY	pageAccessDelayed1			"A página que você está tentando acessar foi bloqueada temporariamente pelo ">
 <!ENTITY	pageAccessDelayed2			".">
-<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
-<!ENTITY	nullUnblockTime				"the end of time">
+<!ENTITY	pageUnblockTime1			"A página será desbloqueada em/no: ">
+<!ENTITY	nullUnblockTime				"fim do tempo">
 <!ENTITY	pageUnblockTime2			"">
 <!ENTITY	youCanClickHere1			"Você pode ">
 <!ENTITY	youCanClickHere2			"clicar aqui">
