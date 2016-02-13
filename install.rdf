@@ -12,13 +12,15 @@
 		<em:creator>James Anderson</em:creator>
 		<em:translator>Michal Stanke (cs-CZ)</em:translator>
 		<em:translator>ioreker (fr-FR)</em:translator>
+		<em:translator>Guillaume Bignon (fr-FR)</em:translator>
 		<em:translator>Gutierrez PS (pt-BR) [http://about.me/gutierrezps]</em:translator>
 		<em:translator>Wang.H.K (zh-CN)</em:translator>
 		<em:translator>Rex Tsai (zh-TW)</em:translator>
+		<em:translator>Allen Chen (zh-CN &amp; zh-TW)</em:translator>
 		<em:optionsURL>chrome://leechblock/content/options.xul</em:optionsURL>
 		<em:iconURL>chrome://leechblock/skin/leechblock32.png</em:iconURL>
 		<em:icon64URL>chrome://leechblock/skin/leechblock64.png</em:icon64URL>
-		<em:homepageURL>http://www.proginosko.com/leechblock.html</em:homepageURL>
+		<em:homepageURL>http://www.proginosko.com/leechblock/</em:homepageURL>
 		<em:targetApplication>
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
