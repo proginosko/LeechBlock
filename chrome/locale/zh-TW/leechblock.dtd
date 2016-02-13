@@ -77,7 +77,7 @@
 <!ENTITY options.homePageLabel "主頁">
 <!ENTITY options.activeBlockLabel "在時間段或者超過時間限制主動封鎖這些網站">
 <!ENTITY options.countFocusLabel "僅於使用該網頁時計算在消耗時間">
-<!ENTITY options.delayFirstLabel "Block only first accessed page of site when delaying page is used">
+<!ENTITY options.delayFirstLabel "當延遲頁面使用時，僅阻止網站的第一個訪問頁面">
 <!ENTITY options.delaySecsDesc1 "延遲存取網站的時間">
 <!ENTITY options.delaySecsDesc2 "使用延遲頁面的秒數">
 <!ENTITY options.advancedWarnDesc1 "警告！">
@@ -141,21 +141,21 @@
 <!ENTITY lockdown.alertLockdown "目前正在鎖定狀態，將持續到：">
 
 <!-- Localization for internal HTML pages -->
-<!ENTITY	language					"zh-TW">
-<!ENTITY	siteBlocked					"網站已封鎖">
-<!ENTITY	pageAccessBlocked1			"">
-<!ENTITY	pageAccessBlocked2			" 已經暫時封鎖此網頁">
-<!ENTITY	pageAccessDelayed1			"">
-<!ENTITY	pageAccessDelayed2			" 已經暫時封鎖此網頁">
-<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
-<!ENTITY	nullUnblockTime				"the end of time">
-<!ENTITY	pageUnblockTime2			"">
-<!ENTITY	youCanClickHere1			"你可以於時限後">
-<!ENTITY	youCanClickHere2			"點擊此處">
-<!ENTITY	youCanClickHere3			"訪問頁面。">
-<!ENTITY	pageWillBeLoaded1			"頁面將在 ">
-<!ENTITY	pageWillBeLoaded2			" 秒後載入。">
-<!ENTITY	considerSupport1			"如果 LeechBlock 幫助你提高了生活品質，請考慮透過">
-<!ENTITY	considerSupport2			"">
-<!ENTITY	considerSupport3			"進行捐助或者撰寫評論">
-<!ENTITY	considerSupport4			"，以支持它持續開發。">
+<!ENTITY language "zh-TW">
+<!ENTITY siteBlocked "網站已封鎖">
+<!ENTITY pageAccessBlocked1 "">
+<!ENTITY pageAccessBlocked2 " 已經暫時封鎖此網頁">
+<!ENTITY pageAccessDelayed1 "">
+<!ENTITY pageAccessDelayed2 " 已經暫時封鎖此網頁">
+<!ENTITY pageUnblockTime1 "此網頁解除封鎖的時間是： ">
+<!ENTITY nullUnblockTime "地老天荒，時之終結">
+<!ENTITY pageUnblockTime2 "">
+<!ENTITY youCanClickHere1 "你可以於時限後">
+<!ENTITY youCanClickHere2 "點擊此處">
+<!ENTITY youCanClickHere3 "訪問頁面。">
+<!ENTITY pageWillBeLoaded1 "頁面將在 ">
+<!ENTITY pageWillBeLoaded2 " 秒後載入。">
+<!ENTITY considerSupport1 "如果 LeechBlock 幫助你提高了生活品質，請考慮透過">
+<!ENTITY considerSupport2 "">
+<!ENTITY considerSupport3 "進行捐助或者撰寫評論">
+<!ENTITY considerSupport4 "，以支持它持續開發。">

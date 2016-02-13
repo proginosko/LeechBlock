@@ -77,7 +77,7 @@
 <!ENTITY options.homePageLabel "主页">
 <!ENTITY options.activeBlockLabel "动态的阻止这些网站的网页，一旦到了时间段或者超过时间限制">
 <!ENTITY options.countFocusLabel "仅在相应的浏览器标签活动时计算在网站上使用的时间">
-<!ENTITY options.delayFirstLabel "Block only first accessed page of site when delaying page is used">
+<!ENTITY options.delayFirstLabel "当延迟页面使用时，仅阻止网站的第一个访问页面">
 <!ENTITY options.delaySecsDesc1 "延迟访问网站的时间">
 <!ENTITY options.delaySecsDesc2 "使用延迟页面的秒数">
 <!ENTITY options.advancedWarnDesc1 "警告！">
@@ -141,21 +141,21 @@
 <!ENTITY lockdown.alertLockdown "目前正在锁定状态，将持续到：">
 
 <!-- Localization for internal HTML pages -->
-<!ENTITY	language					"zh-CN">
-<!ENTITY	siteBlocked					"网站已被阻止">
-<!ENTITY	pageAccessBlocked1			"你正在尝试访问的页面已被 ">
-<!ENTITY	pageAccessBlocked2			" 阻止。">
-<!ENTITY	pageAccessDelayed1			"你正在尝试访问的页面已被 ">
-<!ENTITY	pageAccessDelayed2			" 阻止。">
-<!ENTITY	pageUnblockTime1			"The page will be unblocked at: ">
-<!ENTITY	nullUnblockTime				"the end of time">
-<!ENTITY	pageUnblockTime2			"">
-<!ENTITY	youCanClickHere1			"你可以在阻止过期后">
-<!ENTITY	youCanClickHere2			"点击此处">
-<!ENTITY	youCanClickHere3			"访问页面。">
-<!ENTITY	pageWillBeLoaded1			"页面将在 ">
-<!ENTITY	pageWillBeLoaded2			" 秒后载入。">
-<!ENTITY	considerSupport1			"如果 LeechBlock 帮助你提高了生活质量，请考虑通过">
-<!ENTITY	considerSupport2			"">
-<!ENTITY	considerSupport3			"进行捐助或者撰写评论">
-<!ENTITY	considerSupport4			"来支持它的继续开发。">
+<!ENTITY language "zh-CN">
+<!ENTITY siteBlocked "网站已被阻止">
+<!ENTITY pageAccessBlocked1 "你正在尝试访问的页面已被 ">
+<!ENTITY pageAccessBlocked2 " 阻止。">
+<!ENTITY pageAccessDelayed1 "你正在尝试访问的页面已被 ">
+<!ENTITY pageAccessDelayed2 " 阻止。">
+<!ENTITY pageUnblockTime1 "该页面解除阻止的时间是： ">
+<!ENTITY nullUnblockTime "地老天荒，时之终结">
+<!ENTITY pageUnblockTime2 "">
+<!ENTITY youCanClickHere1 "你可以在阻止过期后">
+<!ENTITY youCanClickHere2 "点击此处">
+<!ENTITY youCanClickHere3 "访问页面。">
+<!ENTITY pageWillBeLoaded1 "页面将在 ">
+<!ENTITY pageWillBeLoaded2 " 秒后载入。">
+<!ENTITY considerSupport1 "如果 LeechBlock 帮助你提高了生活质量，请考虑通过">
+<!ENTITY considerSupport2 "">
+<!ENTITY considerSupport3 "进行捐助或者撰写评论">
+<!ENTITY considerSupport4 "来支持它的继续开发。">
