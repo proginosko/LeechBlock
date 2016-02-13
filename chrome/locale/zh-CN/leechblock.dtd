@@ -147,9 +147,8 @@
 <!ENTITY pageAccessBlocked2 " 阻止。">
 <!ENTITY pageAccessDelayed1 "你正在尝试访问的页面已被 ">
 <!ENTITY pageAccessDelayed2 " 阻止。">
-<!ENTITY pageUnblockTime1 "该页面解除阻止的时间是： ">
+<!ENTITY pageUnblockTime "该页面解除阻止的时间是： ">
 <!ENTITY nullUnblockTime "地老天荒，时之终结">
-<!ENTITY pageUnblockTime2 "">
 <!ENTITY youCanClickHere1 "你可以在阻止过期后">
 <!ENTITY youCanClickHere2 "点击此处">
 <!ENTITY youCanClickHere3 "访问页面。">

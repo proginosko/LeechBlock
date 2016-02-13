@@ -147,9 +147,8 @@
 <!ENTITY	pageAccessBlocked2			".">
 <!ENTITY	pageAccessDelayed1			"A página que você está tentando acessar foi bloqueada temporariamente pelo ">
 <!ENTITY	pageAccessDelayed2			".">
-<!ENTITY	pageUnblockTime1			"A página será desbloqueada em/no: ">
+<!ENTITY	pageUnblockTime				"A página será desbloqueada em/no: ">
 <!ENTITY	nullUnblockTime				"fim do tempo">
-<!ENTITY	pageUnblockTime2			"">
 <!ENTITY	youCanClickHere1			"Você pode ">
 <!ENTITY	youCanClickHere2			"clicar aqui">
 <!ENTITY	youCanClickHere3			" para acessar a página quando o bloqueio expirar.">

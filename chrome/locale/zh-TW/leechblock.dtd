@@ -147,9 +147,8 @@
 <!ENTITY pageAccessBlocked2 " 已經暫時封鎖此網頁">
 <!ENTITY pageAccessDelayed1 "">
 <!ENTITY pageAccessDelayed2 " 已經暫時封鎖此網頁">
-<!ENTITY pageUnblockTime1 "此網頁解除封鎖的時間是： ">
+<!ENTITY pageUnblockTime "此網頁解除封鎖的時間是： ">
 <!ENTITY nullUnblockTime "地老天荒，時之終結">
-<!ENTITY pageUnblockTime2 "">
 <!ENTITY youCanClickHere1 "你可以於時限後">
 <!ENTITY youCanClickHere2 "點擊此處">
 <!ENTITY youCanClickHere3 "訪問頁面。">
