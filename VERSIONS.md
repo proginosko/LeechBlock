@@ -1,6 +1,7 @@
-### Version 1.0.3 (31 Jan 2016)
+### Version 1.0.3 (13 Feb 2016)
 * Added option to delay first/every page on site.
 * Added code to display date/time when page will be unblocked.
+* Updated localizations.
 
 ### Version 1.0.2.2 (16 Jan 2016)
 * Fixed issue with options dialog failing to open for some users.
