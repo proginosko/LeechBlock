@@ -63,7 +63,7 @@
 	<toolbarpalette id="BrowserToolbarPalette">
 		<toolbarbutton id="leechblock-toolbar-button" type="menu"
 			class="toolbarbutton-1 chromeclass-toolbar-additional"
-			label="&leechblock;" tooltiptext="&leechblock;" orient="horizontal">
+			label="&leechblock;" tooltiptext="&leechblock;">
 			<menupopup id="leechblock-toolbar-menupopup"
 				oncommand="LeechBlock.addSiteToSet(event.target, document.commandDispatcher.focusedWindow);"
 				onpopupshowing="LeechBlock.prepareMenu(event.target, document.commandDispatcher.focusedWindow);">
