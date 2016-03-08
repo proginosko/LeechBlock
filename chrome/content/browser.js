@@ -178,7 +178,7 @@ LeechBlock.onPageLoad = function (event) {
 	}
 
 	// Hide extension in about:addons (if option selected)
-	if (pageURL == "about:addons" && LeechBlock.getBoolPref("ham")) {
+	if (pageURL.toLowerCase() == "about:addons" && LeechBlock.getBoolPref("ham")) {
 		LeechBlock.hideExtension(doc);
 	}
 
@@ -343,7 +343,7 @@ LeechBlock.checkWindow = function (parsedURL, win, isRepeat) {
 
 		// Test URL against block/allow regular expressions
 		if (LeechBlock.testURL(pageURL, blockRE, allowRE)
-				|| (prevAddons && /^about:addons/.test(pageURL))
+				|| (prevAddons && /^about:addons/i.test(pageURL))
 				|| (prevConfig && /^about:(config|support)/.test(pageURL))) {
 			// Get preferences for this set
 			let timedata = LeechBlock.getCharPref("timedata" + set).split(",");
