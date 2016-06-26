@@ -344,7 +344,7 @@ LeechBlock.checkWindow = function (parsedURL, win, isRepeat) {
 		// Test URL against block/allow regular expressions
 		if (LeechBlock.testURL(pageURL, blockRE, allowRE)
 				|| (prevAddons && /^about:addons/i.test(pageURL))
-				|| (prevConfig && /^about:(config|support)/.test(pageURL))) {
+				|| (prevConfig && /^about:(config|support)/i.test(pageURL))) {
 			// Get preferences for this set
 			let timedata = LeechBlock.getCharPref("timedata" + set).split(",");
 			let times = LeechBlock.getCharPref("times" + set);
