@@ -1,3 +1,7 @@
+### Version 1.0.4 (26 Jun 2016)
+* Fixed minor GUI issue.
+* Fixed loophole in blocking about:addons, about:config, and about:support.
+
 ### Version 1.0.3 (13 Feb 2016)
 * Added option to delay first/every page on site.
 * Added code to display date/time when page will be unblocked.
