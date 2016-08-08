@@ -10,22 +10,10 @@
 	<script type="application/x-javascript" src="browser.js"/>
 	<script type="application/x-javascript">
 
-	LeechBlock.alertBlockWarning = function (set, setName, secsLeft) {
-		if (setName == "") {
-			setName = "&blockSet; " + set;
-		}
-		LeechBlock.PROMPTS.alert(null,
-				"&warning.title;",
-				"&warning.alertBlock;".replace(/\$B/, setName).replace(/\$S/, secsLeft));
-	}
-
-	LeechBlock.getAddSiteMenuItemLabel = function (site, set, setName) {
-		if (setName != "") {
-			return "&menu.addThisSiteLabel;".replace(/\$S/, site).replace(/\$B/, setName);
-		} else {
-			return "&menu.addThisSiteLabel;".replace(/\$S/, site).replace(/\$B/, "&blockSet; " + set);
-		}
-	}
+	LeechBlock.locale_blockSet = "&blockSet;";
+	LeechBlock.locale_warning_title = "&warning.title;";
+	LeechBlock.locale_warning_alertBlock = "&warning.alertBlock;";
+	LeechBlock.locale_menu_addThisSiteLabel = "&menu.addThisSiteLabel;";
 
 	</script>
 

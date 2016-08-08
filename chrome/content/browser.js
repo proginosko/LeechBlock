@@ -840,6 +840,33 @@ LeechBlock.openLockdownDialog = function () {
 			"leechblock-lockdown", "chrome,centerscreen");
 }
 
+// Shows alert dialog with block warning
+//
+LeechBlock.alertBlockWarning = function (set, setName, secsLeft) {
+	if (setName == "") {
+		setName = LeechBlock.locale_blockSet + " " + set;
+	}
+	LeechBlock.PROMPTS.alert(null,
+			LeechBlock.locale_warning_title,
+			LeechBlock.locale_warning_alertBlock
+					.replace(/\$B/, setName)
+					.replace(/\$S/, secsLeft));
+}
+
+// Returns label for item for add site menu
+//
+LeechBlock.getAddSiteMenuItemLabel = function (site, set, setName) {
+	if (setName != "") {
+		return LeechBlock.locale_menu_addThisSiteLabel
+				.replace(/\$S/, site)
+				.replace(/\$B/, setName);
+	} else {
+		return LeechBlock.locale_menu_addThisSiteLabel
+				.replace(/\$S/, site)
+				.replace(/\$B/, LeechBlock.locale_blockSet + " " + set);
+	}
+}
+
 // Prepares menu (either context menu or toolbar menu)
 //
 LeechBlock.prepareMenu = function (menu, win) {

@@ -22,7 +22,7 @@ LeechBlock.statsRefresh = function () {
 
 		// Update block set name
 		if (setName == "") {
-			setName = LeechBlock.getDefaultSetName(set);
+			setName = LeechBlock.locale_blockSet + " " + set;
 		}
 		document.getElementById("lb-set-name" + set).value = setName;
 

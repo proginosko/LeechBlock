@@ -13,9 +13,7 @@
 	<script type="application/x-javascript" src="stats.js"/>
 	<script type="application/x-javascript">
 
-	LeechBlock.getDefaultSetName = function (set) {
-		return ("&blockSet; " + set);
-	}
+	LeechBlock.locale_blockSet = "&blockSet;";
 
 	</script>
 

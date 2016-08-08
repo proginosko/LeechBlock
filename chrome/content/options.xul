@@ -15,63 +15,13 @@
 	<script type="application/x-javascript" src="options.js"/>
 	<script type="application/x-javascript">
 
-	LeechBlock.alertBadTimes = function () {
-		LeechBlock.PROMPTS.alert(null,
-				"&options.title;",
-				"&options.alertBadTimes;");
-	}
-
-	LeechBlock.alertBadTimeLimit = function () {
-		LeechBlock.PROMPTS.alert(null,
-				"&options.title;",
-				"&options.alertBadTimeLimit;");
-	}
-
-	LeechBlock.alertBadSeconds = function () {
-		LeechBlock.PROMPTS.alert(null,
-				"&options.title;",
-				"&options.alertBadSeconds;");
-	}
-
-	LeechBlock.confirmPrevOptsAllDay = function () {
-		let check = {value: false};
-		let flags =
-				LeechBlock.PROMPTS.BUTTON_POS_0 * LeechBlock.PROMPTS.BUTTON_TITLE_YES +
-				LeechBlock.PROMPTS.BUTTON_POS_1 * LeechBlock.PROMPTS.BUTTON_TITLE_NO;
-		let button = LeechBlock.PROMPTS.confirmEx(null,
-				"&options.title;",
-				"&options.confPrevOptsAllDay;",
-				flags, "", "", "", null, check);
-		return (button == 0);
-	}
-
-	LeechBlock.confirmCancelLockdown = function () {
-		let check = {value: false};
-		let flags =
-				LeechBlock.PROMPTS.BUTTON_POS_0 * LeechBlock.PROMPTS.BUTTON_TITLE_YES +
-				LeechBlock.PROMPTS.BUTTON_POS_1 * LeechBlock.PROMPTS.BUTTON_TITLE_NO;
-		let button = LeechBlock.PROMPTS.confirmEx(null,
-				"&options.title;",
-				"&options.confCancelLockdown;",
-				flags, "", "", "", null, check);
-		return (button == 0);
-	}
-
-	LeechBlock.requestPassword = function (hide) {
-		let userpassword = {}, check = {};
-		if (hide) {
-			LeechBlock.PROMPTS.promptPassword(null,
-					"&options.title;",
-					"&options.passwordPrompt;",
-					userpassword, null, check);
-		} else {
-			LeechBlock.PROMPTS.prompt(null,
-					"&options.title;",
-					"&options.passwordPrompt;",
-					userpassword, null, check);
-		}
-		return userpassword.value;
-	}
+	LeechBlock.locale_options_title = "&options.title;";
+	LeechBlock.locale_options_alertBadTimes = "&options.alertBadTimes;";
+	LeechBlock.locale_options_alertBadTimeLimit = "&options.alertBadTimeLimit;";
+	LeechBlock.locale_options_alertBadSeconds = "&options.alertBadSeconds;";
+	LeechBlock.locale_options_confPrevOptsAllDay = "&options.confPrevOptsAllDay;";
+	LeechBlock.locale_options_confCancelLockdown = "&options.confCancelLockdown;";
+	LeechBlock.locale_options_passwordPrompt = "&options.passwordPrompt;";
 
 	</script>
 

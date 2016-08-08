@@ -40,7 +40,7 @@ LeechBlock.lockdownInit = function () {
 		let lockdown = (sets & (1 << (set - 1))) != 0;
 		document.getElementById("lb-lockdown-set" + set).checked = lockdown;
 		document.getElementById("lb-lockdown-set" + set).label += " "
-				+ LeechBlock.getLockdownBlockSetLabel(set);
+				+ LeechBlock.getBlockSetName(set);
 	}
 }
 
@@ -90,4 +90,23 @@ LeechBlock.lockdownOK = function () {
 //
 LeechBlock.lockdownCancel = function () {
 	return true;
+}
+
+// Shows alert dialog with end time
+//
+LeechBlock.alertLockdown = function (endTime) {
+	LeechBlock.PROMPTS.alert(null,
+			LeechBlock.locale_lockdown_title,
+			LeechBlock.locale_lockdown_alertLockdown + " " + endTime);
+}
+
+// Returns name of block set
+//
+LeechBlock.getBlockSetName = function (set) {
+	let setName = LeechBlock.getUniCharPref("setName" + set);
+	if (setName != "") {
+		return setName;
+	} else {
+		return LeechBlock.locale_blockSet + " " + set;
+	}
 }

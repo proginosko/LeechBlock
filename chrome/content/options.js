@@ -751,3 +751,73 @@ LeechBlock.importOptions = function () {
 	}
 	LeechBlock.updatePasswordOptions();
 }
+
+// Shows alert dialog for bad time periods entry
+//
+LeechBlock.alertBadTimes = function () {
+	LeechBlock.PROMPTS.alert(null,
+			LeechBlock.locale_options_title,
+			LeechBlock.locale_options_alertBadTimes);
+}
+
+// Shows alert dialog for bad time limit entry
+//
+LeechBlock.alertBadTimeLimit = function () {
+	LeechBlock.PROMPTS.alert(null,
+			LeechBlock.locale_options_title,
+			LeechBlock.locale_options_alertBadTimeLimit);
+}
+
+// Shows alert dialog for bad seconds entry
+//
+LeechBlock.alertBadSeconds = function () {
+	LeechBlock.PROMPTS.alert(null,
+			LeechBlock.locale_options_title,
+			LeechBlock.locale_options_alertBadSeconds);
+}
+
+// Shows confirmation dialog for preventing access to options all day
+//
+LeechBlock.confirmPrevOptsAllDay = function () {
+	let check = {value: false};
+	let flags =
+			LeechBlock.PROMPTS.BUTTON_POS_0 * LeechBlock.PROMPTS.BUTTON_TITLE_YES +
+			LeechBlock.PROMPTS.BUTTON_POS_1 * LeechBlock.PROMPTS.BUTTON_TITLE_NO;
+	let button = LeechBlock.PROMPTS.confirmEx(null,
+			LeechBlock.locale_options_title,
+			LeechBlock.locale_options_confPrevOptsAllDay,
+			flags, "", "", "", null, check);
+	return (button == 0);
+}
+
+// Shows confirmation dialog for canceling lockdown
+//
+LeechBlock.confirmCancelLockdown = function () {
+	let check = {value: false};
+	let flags =
+			LeechBlock.PROMPTS.BUTTON_POS_0 * LeechBlock.PROMPTS.BUTTON_TITLE_YES +
+			LeechBlock.PROMPTS.BUTTON_POS_1 * LeechBlock.PROMPTS.BUTTON_TITLE_NO;
+	let button = LeechBlock.PROMPTS.confirmEx(null,
+			LeechBlock.locale_options_title,
+			LeechBlock.locale_options_confCancelLockdown,
+			flags, "", "", "", null, check);
+	return (button == 0);
+}
+
+// Shows prompt dialog for password
+//
+LeechBlock.requestPassword = function (hide) {
+	let userpassword = {}, check = {};
+	if (hide) {
+		LeechBlock.PROMPTS.promptPassword(null,
+				LeechBlock.locale_options_title,
+				LeechBlock.locale_options_passwordPrompt,
+				userpassword, null, check);
+	} else {
+		LeechBlock.PROMPTS.prompt(null,
+				LeechBlock.locale_options_title,
+				LeechBlock.locale_options_passwordPrompt,
+				userpassword, null, check);
+	}
+	return userpassword.value;
+}

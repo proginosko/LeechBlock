@@ -15,20 +15,9 @@
 	<script type="application/x-javascript" src="lockdown.js"/>
 	<script type="application/x-javascript">
 
-	LeechBlock.alertLockdown = function (endTime) {
-		LeechBlock.PROMPTS.alert(null,
-				"&lockdown.title;",
-				"&lockdown.alertLockdown; " + endTime);
-	}
-
-	LeechBlock.getLockdownBlockSetLabel = function (set) {
-		let setName = LeechBlock.getUniCharPref("setName" + set);
-		if (setName != "") {
-			return setName;
-		} else {
-			return "&blockSet; " + set;
-		}
-	}
+	LeechBlock.locale_blockSet = "&blockSet;";
+	LeechBlock.locale_lockdown_title = "&lockdown.title;";
+	LeechBlock.locale_lockdown_alertLockdown = "&lockdown.alertLockdown;";
 
 	</script>
 
