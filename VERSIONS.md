@@ -1,3 +1,6 @@
+### Version 1.0.5 (07 Aug 2016)
+* Minor code improvements (per AMO reviewer recommendation).
+
 ### Version 1.0.4 (26 Jun 2016)
 * Fixed minor GUI issue.
 * Fixed loophole in blocking about:addons, about:config, and about:support.
