@@ -1,16 +1,41 @@
+/* LeechBlock CSS style */
+
 body {
-	background-color: #FFF;
-	color: #000;
-	font: normal medium "Trebuchet MS", "Trebuchet", "Arial", sans-serif;
+	background-color: #fff;
+	color: #2e3436;
+	font: normal 16px "Open Sans", Arial, sans-serif;
 	text-align: center;
 }
 
+div {
+	margin-top: 50px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+a {
+    color: #2ca089;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.freedom {
+	font-size: 14px;
+}
+
 .support {
-	color: #888;
-	font-size: medium;
-	font-style: normal;
+	color: #777;
+	font-size: 14px;
+	font-style: italic;
 }
 
 .support a {
-	color: #888;
+	color: #777;
+	text-decoration: underline;
 }

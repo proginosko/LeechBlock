@@ -12,24 +12,38 @@
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<link rel="shortcut icon" href="chrome://leechblock/skin/leechblock16.ico" type="image/x-icon" />
 		<link rel="icon" href="chrome://leechblock/skin/leechblock16.ico" type="image/x-icon" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i" rel="stylesheet" />
 		<link rel="stylesheet" href="style.css" type="text/css" />
 	</head>
 
 	<body>
 
-		<h1>&siteBlocked;</h1>
+		<!-- logo -->
+		<div>
+			<img src="chrome://leechblock/skin/leechblock_logo.png" alt="&leechblock; logo" title="&leechblock;" />
+		</div>
 
-		<p><img src="chrome://leechblock/skin/leechblock64.png" alt="&leechblock;" title="&leechblock;" /></p>
+		<!-- warning message -->
+		<div>
+			<h1>&pageAccessBlocked1;<a href="http://www.proginosko.com/leechblock/">&leechblock;</a>&pageAccessBlocked2;</h1>
+		</div>
 
-		<p>&pageAccessBlocked1;<a href="http://www.proginosko.com/leechblock/">&leechblock;</a>&pageAccessBlocked2;</p>
+		<!-- blocked site info -->
+		<div>
+			<a id="leechblockBlockedURLLink" target="_self"><span id="leechblockBlockedURLSpan" /></a>
+			(<span id="leechblockBlockedSetSpan">&blockSet;</span>)
+			<p>&pageUnblockTime;<strong><span id="leechblockUnblockTimeSpan">&nullUnblockTime;</span></strong></p>
+		</div>
 
-		<p><strong><span id="leechblockBlockedURLSpan" /></strong> (<span id="leechblockBlockedSetSpan">&blockSet;</span>)</p>
+		<!-- Freedom ad -->
+		<div class="freedom">
+			Want to block distractions on other devices and browsers? Check out <a href="https://freedom.refersion.com/c/134e8">Freedom</a>!<br/>
+			Schedule and sync your blocking sessions across Mac, Windows, and iOS devices.<br/>
+			<p><a href="https://freedom.refersion.com/c/134e8"><img src="chrome://leechblock/skin/freedom_logo_200x40.png" alt="Freedom logo" title="Freedom" /></a></p>
+		</div>
 
-		<p>&pageUnblockTime;<strong><span id="leechblockUnblockTimeSpan">&nullUnblockTime;</span></strong></p>
-
-		<p>&youCanClickHere1;<a id="leechblockBlockedURLLink" target="_self">&youCanClickHere2;</a>&youCanClickHere3;</p>
-
-		<p class="support">&considerSupport1;<br/>&considerSupport2;<a href="https://addons.mozilla.org/en-US/firefox/addon/leechblock/">&considerSupport3;</a>&considerSupport4;</p>
+		<!-- support info -->
+		<div class="support">&considerSupport1;<br/>&considerSupport2;<a href="https://addons.mozilla.org/en-US/firefox/addon/leechblock/">&considerSupport3;</a>&considerSupport4;</div>	
 
 	</body>
 

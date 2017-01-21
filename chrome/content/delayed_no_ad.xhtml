@@ -5,7 +5,7 @@
 	%leechblockDTD;
 ]>
 
-<html id="leechblockBlockingPage" xmlns="http://www.w3.org/1999/xhtml" xml:lang="&language;" lang="&language;">
+<html id="leechblockDelayingPage" xmlns="http://www.w3.org/1999/xhtml" xml:lang="&language;" lang="&language;">
 
 	<head>
 		<title>&siteBlocked;</title>
@@ -14,12 +14,9 @@
 		<link rel="icon" href="chrome://leechblock/skin/leechblock16.ico" type="image/x-icon" />
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i" rel="stylesheet" />
 		<link rel="stylesheet" href="style.css" type="text/css" />
-		<script type="text/javascript">
-			function leechblockClickLink() { document.getElementById('leechblockBlockedURLLink').click(); }
-		</script>
 	</head>
 
-	<body onload="setTimeout(leechblockClickLink, 30000);">
+	<body>
 
 		<!-- logo -->
 		<div>
@@ -28,21 +25,14 @@
 
 		<!-- warning message -->
 		<div>
-			<h1>&pageAccessBlocked1;<a href="http://www.proginosko.com/leechblock/">&leechblock;</a>&pageAccessBlocked2;</h1>
+			<h1>&pageAccessDelayed1;<a href="http://www.proginosko.com/leechblock/">&leechblock;</a>&pageAccessDelayed2;</h1>
 		</div>
 
 		<!-- blocked site info -->
 		<div>
 			<a id="leechblockBlockedURLLink" target="_self"><span id="leechblockBlockedURLSpan" /></a>
 			(<span id="leechblockBlockedSetSpan">&blockSet;</span>)
-			<p>&pageUnblockTime;<strong><span id="leechblockUnblockTimeSpan">&nullUnblockTime;</span></strong></p>
-		</div>
-
-		<!-- Freedom ad -->
-		<div class="freedom">
-			Want to block distractions on other devices and browsers? Check out <a href="https://freedom.refersion.com/c/134e8">Freedom</a>!<br/>
-			Schedule and sync your blocking sessions across Mac, Windows, and iOS devices.<br/>
-			<p><a href="https://freedom.refersion.com/c/134e8"><img src="chrome://leechblock/skin/freedom_logo_200x40.png" alt="Freedom logo" title="Freedom" /></a></p>
+			<p id="leechblockCountdownText">&pageWillBeLoaded1;<strong><span id="leechblockDelaySecondsSpan" /></strong>&pageWillBeLoaded2;</p>
 		</div>
 
 		<!-- support info -->
