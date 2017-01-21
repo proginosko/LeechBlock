@@ -1,3 +1,6 @@
+### Version 1.0.6 (21 Jan 2017)
+* Updated images and style (thanks to Dario Kolak).
+
 ### Version 1.0.5 (07 Aug 2016)
 * Minor code improvements (per AMO reviewer recommendation).
 
