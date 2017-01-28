@@ -189,7 +189,7 @@ LeechBlock.onPageLoad = function (event) {
 			&& parsedURL.args != null && parsedURL.args.length >= 2) {
 		// Get block set and URL (including hash part) of blocked page
 		let blockedSet = parsedURL.args.shift();
-		let blockedURL = parsedURL.args.join("&");
+		let blockedURL = parsedURL.query.substring(3); // retains original separators (& or ;)
 		if (parsedURL.hash != null) {
 			blockedURL += "#" + parsedURL.hash;
 		}

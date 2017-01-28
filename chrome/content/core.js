@@ -171,6 +171,7 @@ LeechBlock.getParsedURL = function (url) {
 			protocol: protocol,
 			host: host,
 			path: path,
+			query: query,
 			args: (query == null) ? null : query.substring(1).split(/[;&]/),
 			hash: (fragment == null) ? null : fragment.substring(1)
 		};
@@ -183,6 +184,7 @@ LeechBlock.getParsedURL = function (url) {
 			protocol: null,
 			host: null,
 			path: null,
+			query: null,
 			args: null,
 			hash: null
 		};
