@@ -1,3 +1,6 @@
+### Version 1.0.7 (17 Mar 2017)
+* Fixed issue with semicolons in blocked URL.
+
 ### Version 1.0.6 (21 Jan 2017)
 * Updated images and style (thanks to Dario Kolak).
 
