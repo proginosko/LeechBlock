@@ -24,8 +24,6 @@ LeechBlock.ALL_DAY_TIMES = "0000-2400";
 LeechBlock.BROWSER_URL = "chrome://browser/content/browser.xul";
 LeechBlock.DEFAULT_BLOCK_URL = "chrome://leechblock/content/blocked.xhtml?$S&$U";
 LeechBlock.DELAYED_BLOCK_URL = "chrome://leechblock/content/delayed.xhtml?$S&$U";
-LeechBlock.DEFAULT_BLOCK_URL_OLD = "chrome://leechblock/locale/blocked.html";
-LeechBlock.DELAYED_BLOCK_URL_OLD = "chrome://leechblock/locale/delayed.html";
 LeechBlock.PREFS = Cc["@mozilla.org/preferences-service;1"]
 		.getService(Ci.nsIPrefService).getBranch("extensions.leechblock.");
 LeechBlock.PROMPTS = Cc["@mozilla.org/embedcomp/prompt-service;1"]
@@ -135,13 +133,6 @@ LeechBlock.savePreferences = function () {
 //
 LeechBlock.cleanPreferences = function () {
 	for (let set = 1; set <= 6; set++) {
-		// Convert old URLs for blocking/delaying pages
-		let blockURL = LeechBlock.getUniCharPref("blockURL" + set);
-		if (blockURL == LeechBlock.DEFAULT_BLOCK_URL_OLD)
-			LeechBlock.setUniCharPref("blockURL" + set, LeechBlock.DEFAULT_BLOCK_URL);
-		if (blockURL == LeechBlock.DELAYED_BLOCK_URL_OLD)
-			LeechBlock.setUniCharPref("blockURL" + set, LeechBlock.DELAYED_BLOCK_URL);
-		
 		// Clean time periods
 		let times = LeechBlock.getUniCharPref("times" + set);
 		LeechBlock.setUniCharPref("times" + set, LeechBlock.cleanTimePeriods(times));
