@@ -1,3 +1,6 @@
+### Version 1.0.8 (18 Mar 2017)
+* Added local fonts.
+
 ### Version 1.0.7 (17 Mar 2017)
 * Fixed issue with semicolons in blocked URL.
 
