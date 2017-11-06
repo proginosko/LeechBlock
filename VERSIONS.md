@@ -1,3 +1,6 @@
+### Version 1.0.9 (06 Nov 2017)
+* Added update notice.
+
 ### Version 1.0.8 (18 Mar 2017)
 * Added local fonts.
 
